@@ -1,0 +1,161 @@
+/* pages/inspection_device_info/inspection_device_info.wxss */
+
+.view-page-red{
+  width: 50%;
+    background-color: red;
+}
+
+.view-page-green{
+  width: 50%;
+  background-color: green;
+}
+
+
+
+
+.tab-page-red{
+  width: 50%;
+    background-color: red;
+}
+
+.tab-page-green{
+  width: 50%;
+  background-color: green;
+}
+
+
+
+
+.tab{
+  height: 10vh;
+}
+
+.view{
+  height: 90vh;
+}
+
+
+
+
+
+
+
+
+
+
+.tba_contain {
+  width: 100%;
+  height: 100%;
+}
+
+.tab {
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  white-space: nowrap;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 100rpx;
+}
+
+.tab-item {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  font-size: 14px;
+  color: #8f9193;
+}
+
+.active {
+  color: #6699ff;
+}
+
+.list_content {
+  padding-top: 200rpx;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 14px;
+  min-height: 100vh;
+}
+
+.content-item {
+  overflow-y: scroll;
+}
+
+.boder{
+  border-bottom: 1px  solid   gainsboro;
+  position: relative;
+}
+
+
+.text_green{
+  color: green;
+}
+
+
+.text_red{
+  color: red;
+}
+
+.line{
+  position: absolute;
+  margin-left: 10vh;
+  width: 1px;
+  height: 100%;
+  background-color: gainsboro;
+}
+
+.img{
+  position: absolute;
+  width: 17px;
+  height: 17px;
+}
+
+.time{
+  margin-left: 5vh;
+  color: #6699ff;
+  font-size: 15px;
+}
+
+
+.big_text{
+  color: black;
+  font-size: 17px;
+}
+
+.small_text{
+  color: gainsboro;
+  font-size: 12px;
+}
+.context{
+  margin-top: 5px;
+  color: black;
+  font-size: 15px;
+}
+
+.icon{
+  margin: 5px;
+  width: 50px;
+  height: 50px;
+}
+
+.text_align{
+  text-align: left;
+}
+.text{
+  text-align: center;
+  font-size: 15px;
+}
+
+.title_text{
+  font-size: 15px;
+}
+.call_text{
+  margin-right: 10px;
+  position: absolute;
+  right: 0;
+  color: #6699ff;
+}

@@ -1,0 +1,23 @@
+/* pages/modules/modules.wxss */
+
+
+
+.image{
+  margin-top: 15px;
+  margin-right: 20%;
+  height: 70px;
+  width: 93%;
+}
+
+.big_image{
+  margin-left: 20%;
+  height: 100px;
+  vertical-align: top;
+  width: 93%;
+}
+
+.text{
+  font-size: 25px;
+  position: absolute;
+  margin-top: 25px;
+}

@@ -1,0 +1,18 @@
+<!--pages/fire_devices/fire_devices.wxml-->
+<add_dialog id='dialogConfirm' bind:cancelEvent="cancelEvent" bind:okEvent="okEvent"></add_dialog>
+<titleBar wx:if="{{owner == 2}}" title_text="设备列表" bindmyevent="onRightImageTap" icon_src="../../images/add_wh.png" icon_display="block"></titleBar>
+<titleBar wx:if="{{owner != 2}}" title_text="设备列表" bindmyevent="onRightImageTap" icon_src="../../images/add_wh.png" icon_display="none"></titleBar>
+
+
+<view style="padding-top: 100rpx;">
+	<view class="container">
+		<view class="touch-item  {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="{{owner==2 ? 'touchmove' : ''}}" wx:key="" wx:for="{{deviceList}}">
+			<fire_device_item class="content" bindtap="tapDevice" data-index="{{index}}" device_title="{{item.equipmentName}}" device_sn="{{item.sn}}" device_type="{{item.eqType}}" device_status="{{item.warning}}" device_battery="{{item.dumpEnergy}}" device_isWork="{{item.isWork}}" device_location="{{item.location}}" device_connection_time="{{item.lastContact}}"></fire_device_item>
+			<view class="del" catchtap="del" data-index="{{index}}">删除</view>
+		</view>
+	</view>
+</view>
+
+	<view wx:if="{{deviceList.length  == 0}}" class="flex_row  no_data">
+		<image src="../../images/no_data.png" mode="aspectFit"></image>
+	</view>

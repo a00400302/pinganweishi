@@ -1,0 +1,51 @@
+<!--pages/place_info/place_info.wxml-->
+
+<titleBar title_text="场所详情" bindmyevent="onRightImageTap" icon_src="../../images/contact_wh.png" icon_display="block"></titleBar>
+
+<view style="margin-top: 100rpx;">
+	<view class="boder" style="padding:10px;" bindtap="deviceTap" data-index="{{index}}">
+		<view class="title_text">部署位置:</view>
+		<view class="text">
+			{{placeName}}
+		</view>
+	</view>
+	<view class="boder" style="padding:10px" bindtap="deviceTap" data-index="{{index}}">
+		<view class="title_text">所属区域:</view>
+		<view class="text">
+			{{placeType}}
+		</view>
+	</view>
+	<view class="boder" style="padding:10px" bindtap="deviceTap" data-index="{{index}}">
+		<view class="title_text">场所地址:</view>
+		<view class="text">
+			{{location}}
+		</view>
+	</view>
+	<view class="boder" style="padding:10px" bindtap="deviceTap" data-index="{{index}}">
+		<view class="title_text">当前状态:</view>
+		<view>
+			<view class="text" wx:if="{{status == 0}}" >
+				正常
+			</view>
+			<view class="text" wx:if="{{status == 1}}" >
+				在线
+			</view>
+      <view class="text"  wx:if="{{status == 2}}" >
+				警报
+			</view>
+      <view class="text" wx:if="{{status == 3}}" >
+				合格
+			</view>
+      <view class="text" wx:if="{{status == 4}}" >
+				不合格
+			</view>
+		</view>
+	</view>
+</view>
+
+
+
+
+
+
+<button wx:if="{{owner == 2}}" class="button_blue flex_column" style="width: 75%; margin-top:45vh;" id="share_button" bindtap="share">分享</button>

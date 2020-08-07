@@ -1,0 +1,83 @@
+/* pages/about/about.wxss */
+/* @import "../../lib/weui.wxss"; */
+
+/* pages/login.wxss */
+
+
+
+.section {
+  min-width: 100%;
+}
+
+.section_height {
+  min-width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+.bc_white {
+  background: white;
+}
+
+
+
+
+.img {
+  margin-top: 30px;
+  margin-bottom: 10%;
+  width: 250rpx;
+  height: 250rpx;
+}
+
+
+.bg-header {
+  vertical-align: top;
+  top: 0px;
+  bottom: -10px;
+  margin-top: 10%;
+  height: 30px;
+  width: 100%;
+}
+
+
+.icon {
+  vertical-align: top;
+  top: 0px;
+  height: 30px;
+  width: 30px;
+  bottom: 0px;
+}
+
+
+.input {
+  color: white;
+}
+
+
+.white_line {
+  margin-top: 3%;
+  margin-left: 12%;
+  margin-right: 12%;
+  height: 1px;
+  background: white;
+}
+
+
+
+.boder{
+  border-bottom: 1px  solid   gainsboro;
+  border-top: 1px solid   gainsboro;
+}
+
+
+.text{
+  margin-right: 70%; 
+  font-size: 15px;
+}
+
+.title_text{
+  font-size: 15px;
+}

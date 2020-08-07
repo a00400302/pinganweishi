@@ -1,0 +1,13 @@
+/* pages/place_share/place_share.wxss */
+view{
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+
+image{
+  width: 250px;
+  height: 250px;
+}
+
+

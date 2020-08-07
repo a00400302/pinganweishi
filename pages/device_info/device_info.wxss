@@ -1,0 +1,76 @@
+/* pages/device_info/device_info.wxss */
+.flex_row_self{
+  display:flex;    
+  white-space: nowrap;     
+  flex-direction: row;      
+  border-bottom:  0.1px solid  gainsboro;
+  padding: 3%;
+  font-size: 15px;
+}
+
+
+.text_right{
+  position: absolute;
+  text-align: right;
+}
+
+
+
+
+
+.button{
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
+
+
+
+.img {
+  top: 0px;
+  bottom: 0px;
+  margin: 15px;
+  width: 75px;
+  height: 75px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.image {
+  top: 0px;
+  bottom: 0px;
+  width: 23px;
+  height: 23px;
+}
+
+
+.right_text {
+  text-align: right;
+  width: 80%;
+}
+
+
+.right_text_red {
+  color: #FF5555;
+  text-align: right;
+  width: 80%;
+}
+
+.right_text_gr {
+  color: #04cbb2;
+  text-align: right;
+  width: 80%;
+}
+
+.right_text_yellow {
+  color: #FFB41F;
+  text-align: right;
+  width: 80%;
+}

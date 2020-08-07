@@ -1,0 +1,73 @@
+<!--Component/place_item/place_item.wxml-->
+
+
+
+
+<view class='chain-dialog'>
+
+
+
+	<view class='title_view flex_row'>
+		<text class="title_text">{{place_title}}</text>
+		<view style="width:87%">
+		</view>
+	</view>
+
+
+		<view class="line"></view>
+	
+	<view class='chain-dialog-btn-view flex_row'>
+		<view class="flex_column" >
+		
+			<view class="flex_column">
+				<text wx:if="{{place_type == 1}}"  class="text">
+				场所类型:公司企业
+				</text>
+				<text wx:elif="{{place_type == 2}}"  class="text">
+					场所类型:工厂企业
+				</text>
+				<text wx:elif="{{place_type == 3}}"  class="text">
+					场所类型:小作坊
+				</text>
+				<text wx:elif="{{place_type == 4}}"  class="text">
+					场所类型:小商铺
+				</text>
+				<text wx:elif="{{place_type == 5}}"  class="text">
+					场所类型:小娱乐场所
+				</text>
+				<text wx:elif="{{place_type == 6}}"  class="text">
+					场所类型:娱乐场所
+				</text>
+				<text wx:elif="{{place_type  == 7}}"  class="text">
+					场所类型:出租屋
+				</text>
+				<text wx:elif="{{place_type == 8}}"  class="text">
+					场所类型:宾饭馆
+				</text>
+				<text wx:elif="{{place_type == 9}}"  class="text">
+					场所类型:学校
+				</text>
+				<text wx:elif="{{place_type == 10}}"  class="text">
+					场所类型:其他
+				</text>
+				
+			</view>
+			<view class="flex_column"  >
+				<text class="text">场所地址:{{place_location}}</text>
+			</view>
+			<view class="flex_column">
+				<text  class="text">所属区域:{{place_area}}</text>
+			</view>
+
+
+
+
+		</view>
+		<!-- <view style="width:70%"></view> -->
+		<view>
+			<image wx:if="{{status == 2}}" class="img" src="/images/unqualified_red.png"></image>
+			<image wx:if="{{status == 0}}" class="img" src="/images/qualified_gr.png"></image>
+		</view>
+	</view>
+
+</view>

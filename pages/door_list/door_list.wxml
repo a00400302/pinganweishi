@@ -1,0 +1,5 @@
+<!--pages/door_list/door_list.wxml-->
+
+<view class="flex_row  no_data">
+	<image src="../../images/no_data.png" mode="aspectFit"></image>
+</view>

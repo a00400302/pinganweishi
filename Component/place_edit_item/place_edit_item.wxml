@@ -1,0 +1,85 @@
+<!--Component/place_item/place_item.wxml-->
+
+<wxs src="../../utils/tools.wxs" module="tools" />
+
+<view class="flex_row">
+<radio  class="radiobutton"  style="margin-top:10px;margin-left: 10px;" checked="{{isSelect == '1' ? true : false}}"    wx:if="{{isEdit == true &&  owner == 2}}"></radio>
+
+<view style="width: 100%;">
+<view  class="image_layout"  wx:if="{{isEdit != true}}">
+
+	<image class="img"  src="/images/icons_forward.png"></image>
+
+</view>
+
+<view  style="margin-left: 15px;margin-right: 15px;">
+
+
+<view class='title_view flex_row'>
+	<text class="title_text">{{place_title}}</text>
+	<view style="width:70%;"></view>
+	<view style="margin-right: 15px;margin-top:8px;">
+	<text  wx:if="{{owner == 1}}"  class="owner">系统</text>
+		<text  wx:elif="{{owner == 2}}"  class="owner">自建	</text>
+		<text  wx:else  class="owner">他人</text>
+		</view>
+</view>
+
+
+<view class='flex_row' style="margin-bottom: 10px;margin-left: 10px;">
+	<view class="flex_column">
+		<view class="flex_row">
+			<view class="text">
+          场所地址:
+      </view>
+			<view wx:if="{{place_location.length > 14}}" class="text_about">
+			{{tools.sub(place_location)}}
+			</view>
+			<view wx:if="{{place_location.length < 14}}" class="text_about"> {{place_location}}</view>
+		</view>
+
+
+		<view class="flex_row">
+			<view  class="text">
+      	场所类别:
+      </view>
+			<view>
+				<view wx:if="{{place_type == 1}}"  class="text">
+					公司企业
+				</view>
+				<view wx:elif="{{place_type == 2}}"  class="text">
+					工厂企业
+				</view>
+				<view wx:elif="{{place_type == 3}}"  class="text">
+					小作坊
+				</view>
+				<view wx:elif="{{place_type == 4}}"  class="text">
+					小商铺
+				</view>
+				<view wx:elif="{{place_type == 5}}"  class="text">
+					小娱乐场所
+				</view>
+				<view wx:elif="{{place_type == 6}}"  class="text">
+					娱乐场所
+				</view>
+				<view wx:elif="{{place_type  == 7}}"  class="text">
+					出租屋
+				</view>
+				<view wx:elif="{{place_type == 8}}"  class="text">
+					宾饭馆
+				</view>
+				<view wx:elif="{{place_type == 9}}"  class="text">
+					学校
+				</view>
+				<view wx:elif="{{place_type == 10}}"  class="text">
+					其他
+				</view>
+				</view>
+		</view>
+	</view>
+</view>
+
+<view class="line"></view>
+</view>
+</view>
+</view>

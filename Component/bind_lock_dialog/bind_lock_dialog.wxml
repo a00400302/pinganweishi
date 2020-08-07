@@ -1,0 +1,24 @@
+<!--Component/add_dialog/add_dialog.wxml-->
+<view hidden='{{!isShow}}'>
+	<!-- 遮罩层 -->
+	<view class="chain-mask"></view>
+	<view class='chain-dialog'>
+		<view class='chain-dialog-title'>设备绑定</view>
+
+		<scroll-view scroll-y="true" style="height: 300rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+			<view  wx:for="{{bindlist}}" id="demo1" class="scroll-view-item  flex_row">
+				<view  class="text_name"style="margin-top:2%;margin-left:3%;">{{item.equipmentName}}:{{item.numForSn}}</view>
+				<view class="switch_layout">
+				<switch   data-index="{{index}}" style="margin-top:2%;margin-right:2%;" checked="{{item.checked == 1}}" bindchange="switchChange" />
+				<!-- bindtap="tapPlace"  -->
+				</view>
+			</view>
+		</scroll-view>
+
+
+		<view class='chain-dialog-btn-view'>
+			<view class='chain-dialog-btn' bindtap='_cancelClick'>{{cancelText}}</view>
+			<view class='chain-dialog-btn chain-dialog-btn-ok' bindtap='_okClick'>{{okText}}</view>
+		</view>
+	</view>
+</view>

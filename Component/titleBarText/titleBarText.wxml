@@ -1,0 +1,14 @@
+
+<view class='title_bar container'>
+
+	<view>
+		<text id=""  class="title">{{title_text}}</text>
+	</view>
+
+
+<view  class="title_icon" >
+		<view  class="right_image" catchtap="onTaps"  style="display:{{icon_display}};" > {{icon_src}}</view>
+</view>
+
+
+</view>

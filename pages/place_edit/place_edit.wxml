@@ -1,0 +1,60 @@
+<!--pages/place_edit/place_edit.wxml-->
+
+
+<!--pages/fire/fire.wxml-->
+<add_dialog id='dialogConfirm' bind:cancelEvent="cancelEvent" bind:okEvent="okEvent"></add_dialog>
+<view class="flex_column">
+	<titleBar title_text="场所管理" bindmyevent="onRightImageTap" icon_src="../../images/add_wh.png" icon_display="block"></titleBar>
+
+
+	<view style="padding-top: 100rpx;">
+		<view wx:for="{{placelist}}">
+			<place_edit_item place_title="{{item.placeName}}" place_location="{{item.placeAddress}}" place_type="{{item.placeType}}" bindtap="tapPlace" owner="{{item.createType}}" data-index="{{index}}" isEdit="{{isEdit}}" isSelect="{{item.placeimgurl}}">
+			</place_edit_item>
+		</view>
+	</view>
+</view>
+
+
+
+<view  wx:if="{{isEdit}}" class="flex_row" style="width:100%;padding: 12px;position:fixed; bottom:0;width: 750rpx;background-color: white;">
+
+	<view class="flex_row" style="width: 49%;" bindtap="cancelTap">
+		<view>
+			取消
+		</view>
+	</view>
+
+	<view style="width:1px;background-color: gray;" ></view>
+	<view class="flex_row" style="width: 49%;" bindtap="deleteTap">
+		<view style="color: #6699ff;">
+			删除
+		</view>
+	</view>
+</view>
+
+
+
+<view  wx:if="{{isEdit}}" class="flex_row" style="width:100%;padding: 12px;">
+
+	<view class="flex_row" style="width: 49%;" >
+		<view>
+			取消
+		</view>
+	</view>
+
+	<view style="width:1px;background-color: gray;"></view>
+	<view class="flex_row" style="width: 49%;" >
+		<view style="color: #6699ff;">
+			删除
+		</view>
+	</view>
+</view>
+
+
+
+
+
+<view wx:if="{{placelist.length  == 0}}" class="flex_row  no_data">
+	<image src="../../images/no_data.png" mode="aspectFit"></image>
+</view>

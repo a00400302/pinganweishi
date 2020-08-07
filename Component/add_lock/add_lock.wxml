@@ -1,0 +1,35 @@
+<!--Component/add_camera.wxml-->
+<view class="border">
+
+
+
+
+
+
+	<view class="flex_column">
+		<view class="flex_row">
+			<view>名 称:</view>
+			<view>{{lock_naem}}</view>
+		</view>
+
+		<view class="flex_row">
+			<view>设备SN:</view>
+			<view>{{lock_sn}}</view>
+		</view>
+
+		<view class="flex_row">
+			<view>设备状态:</view>
+			<view  wx:if="{{check_code == 1}}">在线</view>
+			<view  wx:if="{{check_code == 0}}">休眠</view>
+		</view>
+	</view>
+
+
+
+<view  class="image_layout_big"  wx:if="{{check_code == 1}}">
+	<view  class="image_layout">
+		<image class="image_self" src="../../images/door_lock.png"  mode='aspectFit'></image>
+ </view>
+</view>
+</view>
+

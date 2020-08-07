@@ -1,0 +1,123 @@
+/* Component/add_dialog/add_dialog.wxss */
+
+
+.chain-dialog {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 3%;
+  margin-bottom: 2%;
+  background-color: #ffffff;
+
+  border-radius: 15rpx;
+  box-shadow: 3px 3px 20px #d0d0d0, -3px -3px 20px #d0d0d0;
+}
+
+
+
+
+.flex_row {
+  display: flex;
+  flex-direction: row;
+}
+
+.img {
+  top: 0px;
+  bottom: 0px;
+  margin: 15px;
+  width: 75px;
+  height: 75px;
+}
+
+
+.title_text {
+  margin-top: 17px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+
+.owner {
+  margin-right: 10px;
+  margin-top: 10px;
+  font-size: 14px;
+  background-color: #ffffff;
+  text-align: center;
+  border-radius: 15rpx;
+  color: #6699ff;
+  border: 2px solid #6699ff;
+}
+
+
+.text {
+  font-size: 17px;
+}
+
+.testText {
+  margin-top: 3%;
+  margin-bottom: 3%;
+  margin-left: 5%;
+  margin-right: 3%;
+  font-size: 17px;
+  text-align: center;
+}
+
+.flex_column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text_about {
+
+  font-size: 17px;
+}
+
+
+.line {
+  margin-top: 5px;
+  width: 100%;
+  height: 1px;
+  border-top: 2rpx solid #D5D5D6;
+  color: #D5D5D6;
+}
+
+.title_view {
+  margin-bottom: 3%;
+}
+
+
+.image {
+  margin-top: 15px;
+  margin-left: 15px;
+  top: 0px;
+  bottom: 0px;
+  width: 30px;
+  height: 30px;
+}
+
+
+.right_text {
+  text-align: right;
+  width: 75%;
+}
+
+
+.right_text_red {
+  color: #FF5555;
+  text-align: right;
+  width: 75%;
+}
+
+.right_text_gr {
+  color: #04cbb2;
+  text-align: right;
+  width: 75%;
+}
+
+.right_text_yellow {
+  color: #FFB41F;
+  text-align: right;
+  width: 75%;
+}

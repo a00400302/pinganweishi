@@ -1,0 +1,22 @@
+<!--pages/place_share/place_share.wxml-->
+
+<view>
+	1.首先需要对方下载并打开"瓶安卫士"APP
+
+</view>
+<view>
+	2.点击首页右上角"+",选择二维码添加,进入扫一扫页面
+</view>
+<view>
+	3.扫描下方二维码,看到提示结果即完成分享
+</view>
+
+
+
+<view style="width: 100%;display: flex;orientation: row;justify-content: center;">
+	<image src="{{image_src}}"></image>
+</view>
+
+
+
+<button class="button_blue flex_column" style="width: 75%; margin-top:30vh;" id="flash_button" bindtap="flash">刷新</button>

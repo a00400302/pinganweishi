@@ -1,0 +1,14 @@
+<!--Component/titleBar/titleBar.wxml-->
+<view class='title_bar container'>
+
+	<view>
+		<text id=""  class="title">{{title_text}}</text>
+	</view>
+
+
+<view  class="title_icon" >
+		<image  src="{{icon_src}}"  class="right_image" bindtap="onTap"  style="display:{{icon_display}};" ></image>
+</view>
+
+
+</view>

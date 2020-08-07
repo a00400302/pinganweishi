@@ -1,0 +1,31 @@
+<!--pages/push_edit/push_edit.wxml-->
+
+<view  wx:for="{{placelist}}">
+
+  
+<view class='chain-dialog'>
+	<view  style="margin-left:10px;">
+	<view style="position: absolute;margin-top:5px">
+		{{item.placeName}}
+</view>
+		<button bindtap='_okClick' data-index="{{index}}" class="text_text" style="width:90px;height:40px;margin-left: 70%">提交</button>
+	</view>
+
+	<view class="line"></view>
+
+
+	<view class='chain-dialog-btn-view flex_row' style="margin-left:10px">
+		<view  style="margin-left:20px">
+			电话推送
+			<switch checked="{{item.callSwitch == 1}}" data-index="{{index}}"  bindchange="changeCall"  />
+		</view>
+		<view  style="margin-left:20px">
+			短信推送
+			<switch checked="{{item.smsSwitch == 1}}"  data-index="{{index}}" bindchange="changeSms"/>
+		</view>
+	</view>
+
+</view>
+
+</view>
+

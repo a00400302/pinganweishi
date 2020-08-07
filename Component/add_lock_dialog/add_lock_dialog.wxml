@@ -1,0 +1,27 @@
+<!--Component/add_dialog/add_dialog.wxml-->
+<view hidden='{{!isShow}}'>
+	<!-- 遮罩层 -->
+	<view class="chain-mask"></view>
+	<view class='chain-dialog'>
+		<view class='chain-dialog-title'>添加设备</view>
+
+		<view class="flex_row">
+			<view>
+			名 称：
+			</view>
+			<input bindinput="device_name" class="input" value="{{device_name}}"></input>
+		</view>
+
+		<view class="flex_row">
+			<view>
+			设备SN：
+			</view>
+			<input bindinput="device_sn" class="input" value="{{device_sn}}"></input>
+		</view>
+
+		<view class='chain-dialog-btn-view'>
+			<view class='chain-dialog-btn' bindtap='_cancelClick'>{{cancelText}}</view>
+			<view class='chain-dialog-btn chain-dialog-btn-ok' bindtap='_okClick'>{{okText}}</view>
+		</view>
+	</view>
+</view>

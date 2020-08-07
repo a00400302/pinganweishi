@@ -1,0 +1,9 @@
+<!--pages/history/history.wxml-->
+
+<view wx:for="{{messageList}}">
+  <message_device_item message_type="{{item.eventDescribe}}" messsage_sn="{{item.sn}}" messsage_place="{{item.placeName}}" message_location="{{item.location}}" message_triger_time="{{item.createTime}}"
+    message_deal_time="{{item.dealTime}}" message_deal_status="{{item.result}}">
+
+  </message_device_item>
+
+</view>

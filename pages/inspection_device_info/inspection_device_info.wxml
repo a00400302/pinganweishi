@@ -1,0 +1,124 @@
+<view class="tba_contain">
+	<titleBar title_text="设备信息" bindmyevent="onRightImageTap" icon_src="../../images/record.png" icon_display="block"></titleBar>
+	<!-- 导航栏 -->
+	<scroll-view style="margin-top: 100rpx;" class="tab" scroll-x scroll-left="{{tabScroll}}" scroll-with-animation="true">
+		<block wx:for="{{menuList}}" wx:key="index">
+			<view class="tab-item {{currentTab == index ? 'active' : ''}}" data-current="{{index}}" bindtap='clickMenu'>{{item.name}}</view>
+		</block>
+	</scroll-view>
+	<!-- 页面 -->
+	<swiper class="list_content" style='height: {{height}}px' duration="500" current="{{currentTab}}" bindchange="changeContent">
+		<swiper-item class="content-item" wx:key="index">
+			<view>
+				<view class="flex_row boder" style="padding:10px" bindtap="deviceTap" data-index="{{index}}">
+					<view>设备名称</view>
+					<view style="width:65%"></view>
+					<view>
+						{{device_name}}
+					</view>
+				</view>
+				<view class="flex_row boder" style="padding:10px" bindtap="deviceTap" data-index="{{index}}">
+					<view>设备状态</view>
+					<view style="width:60%"></view>
+					<view>
+						<view wx:if="{{device_status == 1}}" class="text_green">
+							合格
+						</view>
+						<view wx:if="{{device_status == 2}}" class="text_red">
+							不合格
+						</view>
+					</view>
+				</view>
+				<view class="flex_row boder" style="padding:10px" bindtap="deviceTap" data-index="{{index}}">
+					<view>设备类型</view>
+					<view style="width:65%"></view>
+					<view wx:if="{{deview_type == 1}}">
+						自动火灾报警系统
+					</view>
+					<view wx:elif="{{deview_type == 2}}">
+						消防水灭火系统
+					</view>
+					<view wx:elif="{{deview_type == 3}}">
+						气体灭火系统
+					</view>
+					<view wx:elif="{{deview_type == 4}}">
+						应急照明灯与疏散指灯
+					</view>
+					<view wx:elif="{{deview_type == 5}}">
+						灭火器
+					</view>
+					<view wx:elif="{{deview_type == 6}}">
+						防排烟系统
+					</view>
+					<view wx:elif="{{deview_type == 7}}">
+						其他附属设施
+					</view>
+					<view wx:else>
+						----
+					</view>
+				</view>
+				<view class="flex_row boder" style="padding:10px">
+					<view>场所名称</view>
+					<view style="width:65%"></view>
+					<view>
+						{{place_name}}
+					</view>
+				</view>
+				<view class="flex_row boder" style="padding:10px">
+					<view>安装位置</view>
+					<view style="width:65%"></view>
+					<view>
+						{{device_location}}
+					</view>
+				</view>
+			</view>
+
+
+
+
+		</swiper-item>
+		<swiper-item class="content-item" wx:key="index">
+
+			<view class="line">
+			</view>
+
+
+			<view class="flex_column_self" style="margin-left:8.6vh;margin-top:20px;">
+				<!-- <view class="flex_row_self">
+					<image class="img" style="margin-top:3px" src="/images/radio_choseed.png"></image>
+					<text  class="time">asdfasdf</text>
+				</view> -->
+
+				<view class="flex_row_self" style="margin-top:20px" wx:for="{{record_list}}">
+					<image class="img" style="margin-top:3px" src="/images/radio_choseed.png"></image>
+					<view class="flex_column_self" style="margin-left: 5vh;">
+						<view class="text_align">
+							<view wx:if="{{item.type == 1}}" class="big_text">巡检</view>
+						</view>
+						<view class="text_align">
+							<view wx:if="{{item.type == 2}}" class="big_text">整改</view>
+						</view>
+						<view class="text_align">
+							<view class="small_text">{{item.createTime}}</view>
+						</view>
+						<view class="text_align">
+							<view class="context">描述:{{item.remark}}</view>
+						</view>
+						<view class="flex_row_self">
+							<image class="icon" wx:if="{{item.equipmentPic1 != null}}" src="http://139.159.230.78/{{item.equipmentPic1}}"></image>
+							<image class="icon" wx:if="{{item.equipmentPic2 != null}}" src="http://139.159.230.78/{{item.equipmentPic2}}"></image>
+							<image class="icon" wx:if="{{item.equipmentPic3 != null}}" src="http://139.159.230.78/{{item.equipmentPic3}}"></image>
+						</view>
+					</view>
+
+				</view>
+			</view>
+
+
+			<view wx:if="{{record_list.length  == 0}}" class="flex_row  no_data">
+				<image src="../../images/no_data.png" mode="aspectFit"></image>
+			</view>
+
+		</swiper-item>
+	</swiper>
+</view>

@@ -1,0 +1,5 @@
+<!--Component/place_item/place_item.wxml-->
+
+<wxs src="../../utils/tools.wxs" module="tools" />
+
+

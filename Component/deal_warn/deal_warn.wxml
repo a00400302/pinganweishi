@@ -1,0 +1,20 @@
+<!--Component/add_dialog/add_dialog.wxml-->
+<view hidden='{{!isShow}}'>
+  <!-- 遮罩层 -->
+  <view class="chain-mask"  bindtap="close"></view>
+  <view class='chain-dialog'>
+    <view class='chain-dialog-title'>请选择处理类型</view>  
+    <radio-group  class="flex_column"  name="radio-group" bindchange="swiperChange">
+			<radio class="radio_button" color="#6699ff" value="1">报警误报</radio>
+			<radio class="radio_button" color="#6699ff" value="2">报警测试</radio>
+			<radio class="radio_button" color="#6699ff" value="3">真实报警</radio>
+		</radio-group>
+    <button bindtap='_okClick'>确定</button>
+    
+  </view>
+</view>
+
+
+
+
+

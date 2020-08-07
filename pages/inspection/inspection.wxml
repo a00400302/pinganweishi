@@ -1,0 +1,20 @@
+<!--pages/inspection/inspection.wxml-->
+<add_dialog id='dialogConfirm' bind:cancelEvent="cancelEvent" bind:okEvent="okEvent"></add_dialog>
+
+
+
+<view class="flex_column">
+	<titleBar title_text="巡检" bindmyevent="onRightImageTap" icon_src="../../images/place_marker_wh.png" icon_display="block"></titleBar>
+
+</view>
+
+<view style="padding-top: 100rpx;">
+	<view wx:for="{{placelist}}">
+		<inspection_item status="{{item.status}}" place_type="{{item.placeType}}" place_location="{{item.placeAddress}}" place_area="{{item.administrativeRegions}}" place_title="{{item.placeName}}" bindtap="inspectionTap" data-index="{{index}}"> </inspection_item>
+	</view>
+</view>
+
+
+<view wx:if="{{placelist.length  == 0}}" class="flex_row  no_data">
+	<image src="../../images/no_data.png" mode="aspectFit"></image>
+</view>

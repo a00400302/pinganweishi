@@ -1,0 +1,21 @@
+<!--pages/lock_list/lock_list.wxml-->
+
+
+
+<bind_lock_dialog placeId="{{placeid}}" deviceId="{{}}" id='binddialogConfirm' bind:cancelEvent="bindcancelEvent" bind:okEvent="bindokEvent"></bind_lock_dialog>
+<add_lock_dialog placeId="{{placeid}}" id='dialogConfirm' bind:cancelEvent="cancelEvent" bind:okEvent="okEvent"></add_lock_dialog>
+<titleBar wx:if="{{owner == 2}}" title_text="电子锁列表" bindmyevent="onRightImageTap" icon_src="../../images/add_wh.png" icon_display="block"></titleBar>
+
+
+<view style="padding-top: 100rpx;" class="container">
+	<view class="touch-item  {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="{{owner==2 ? 'touchmove' : ''}}" wx:key="" wx:for="{{lockList}}">
+		<add_crmera bindtap="play" data-index="{{index}}" class="content" status="{{item.status}}" lock_id="{{item.id}}" lock_naem="{{item.doorLockName}}" lock_sn="{{item.doorLockSn}}" check_code="{{item.status}}"></add_crmera>
+		<view class="bind" catchtap="bind" data-index="{{index}}">绑定</view>
+		<view class="del" catchtap="del" data-index="{{index}}">删除</view>
+	</view>
+</view>
+
+
+<view  wx:if="{{lockList.length  == 0}}" class="flex_row  no_data">
+	<image src="../../images/no_data.png" mode="aspectFit"></image>
+</view>

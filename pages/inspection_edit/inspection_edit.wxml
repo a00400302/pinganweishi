@@ -1,0 +1,58 @@
+<!--pages/inspection_edit/inspection_edit.wxml-->
+<titleBar wx:if="{{isScan == 0}}" title_text="巡检" bindmyevent="onRightImageTap" icon_src="../../images/record.png" icon_display="none"></titleBar>
+<titleBar wx:if="{{isScan == 1}}" title_text="整改" bindmyevent="onRightImageTap" icon_src="../../images/record.png" icon_display="none"></titleBar>
+
+
+
+<view style="margin-top: 100rpx;">
+	<view class="flex_row boder" style="padding:10px;font-size: 13px;">
+		<view>检查结果</view>
+		<view style="width:80%"></view>
+	</view>
+
+	<radio-group bindchange="radioChange" >
+		<view class="flex_row boder" style="padding:10px;font-size: 15px;">
+			<radio  checked="{{isOk  == 1}}" value="{{OkCheck}}">
+			</radio>
+			<view>合格</view>
+			<view style="width:80%"></view>
+		</view>
+
+		<view class="flex_row boder" style="padding:10px;font-size: 15px;">
+			<radio  checked="{{isOk != 1}}" value="{{failCheck}}">
+			</radio>
+			<view>不合格</view>
+			<view style="width:75%"></view>
+		</view>
+	</radio-group>
+
+
+	<view class="flex_column_self boder" style="padding:10px;font-size: 15px;">
+		<view style="padding-left:10px">备注</view>
+		<textarea value="{{remask}}" style="width:80%;height: 10vh;" bindinput="remask_input"></textarea>
+	</view>
+
+
+
+	<view wx:if="{{isOk != 1}}">
+		<view class='ui_cell'>
+			<view class='ui_cell_bd'>现场照片</view>
+			<view class='ui_cell_ft'>{{uploaderNum}}/3</view>
+		</view>
+		<view class='ui_uploader_cell'>
+			<view class='ui_uploader_item' wx:for="{{uploaderList}}" wx:key="{{index}}">
+				<icon class='ui_uploader_item_icon' bindtap='clearImg' data-index="{{index}}" type="clear" size="20" color="red" />
+				<image bindtap='showImg' data-index="{{index}}" src='{{item}}'></image>
+			</view>
+			<view class='ui_uploader' bindtap='upload' wx:if="{{showUpload}}"></view>
+		</view>
+	</view>
+
+
+<button  class="button_blue flex_column" style="width: 75%; margin-top:30%;"  id="sub_button" bindtap="sub">提交</button>
+	
+
+
+
+
+</view>

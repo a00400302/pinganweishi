@@ -1,0 +1,21 @@
+<!--pages/login.wxml-->
+
+
+<view class="section bc_white">
+
+	
+		<view class="section flex_row">
+			<image src="../../images/logo.png" class="img" />
+		</view>
+	<view class="bg"></view>
+
+	<view>
+		<image src="../../images/bottombg.png" class="bg-header" />
+	</view>
+	
+</view>
+
+
+
+<!-- <button  class="button_white flex_column" style="width: 75%; margin-top:20%;"  id="login_button" bindtap="login" >授权登录</button> -->
+<button  class="button_white flex_column" style="width: 75%; margin-top:20%;"  id="login_button" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">授权登录</button>

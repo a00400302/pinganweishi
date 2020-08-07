@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "fire_device_item":"../../Component/fire_device_item/fire_device_item",
+    "titleBar":"../../Component/titleBar/titleBar",
+    "add_dialog": "/Component/add_dialog/add_dialog"}
+}

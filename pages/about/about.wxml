@@ -1,0 +1,30 @@
+<!--pages/login.wxml-->
+
+
+<view class="section bc_white">
+	<view class="section flex_row">
+		<image src="../../images/logo.png" class="img" />
+  </view>
+</view>
+
+
+<view style="margin-top: 400rpx;">
+	<view class="boder" style="padding:10px;">
+		<view class="title_text">联系我们:</view>
+		<view class="text">
+			0760-88872250
+		</view>
+	</view>
+	<view class="boder" style="padding:10px">
+		<view class="title_text">微信公众号:</view>
+		<view class="text">
+			中山宇信科技
+		</view>
+	</view>
+	<view class="boder" style="padding:10px">
+		<view class="title_text">联系邮箱:</view>
+		<view class="text">
+			380349721@qq.com
+		</view>
+	</view>
+</view>

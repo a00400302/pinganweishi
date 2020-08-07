@@ -1,0 +1,119 @@
+<!--pages/add_device/add_device.wxml-->
+<view class="flex_column">
+
+
+	<view class="flex_row_self  top_margin">
+		<view class="flex_column_self left_margin">
+			<view class="paddingText">设备sn码:</view>
+
+			<input bindinput="device_sn" class="input" value="{{device_sn}}"></input>
+		</view>
+	</view>
+
+	<view class="flex_row_self">
+		<view class="flex_column_self left_margin">
+			<view class="paddingText">设备名称:</view>
+
+			<input bindinput="device_name" class="input" value="{{device_name}}"></input>
+		</view>
+
+		<view class="flex_column_self big_left_margin">
+			<view class="paddingText">安装位置:</view>
+
+			<input bindinput="device_location" class="input" value="{{device_location}}"></input>
+		</view>
+
+	</view>
+
+	<view class="flex_row_self">
+		<view class="flex_column_self left_margin">
+			<view class="paddingText">报警时段1开始:</view>
+
+			<picker class='time-picker' mode="time" bindchange="bindStarTime1Change" start="00:00" end="23:59">
+				<input bindinput="start_time1" class="input" value="{{start_time1}}"></input>
+			</picker>
+		</view>
+
+
+
+		<view class="flex_column_self big_left_margin">
+			<view class="paddingText">结束:</view>
+			<picker class='time-picker' mode="time" bindchange="bindEndTime1Change" start="00:00" end="23:59">
+				<input bindinput="end_time1" class="input" value="{{end_time1}}"></input>
+			</picker>
+		</view>
+
+	</view>
+
+
+
+
+
+	<view class="flex_row_self">
+		<view class="flex_column_self left_margin">
+			<view class="paddingText">报警时段2开始:</view>
+
+			<picker class='time-picker' mode="time" bindchange="bindStarTime2Change" start="00:00" end="23:59">
+				<input bindinput="start_time2" class="input" value="{{start_time2}}"></input>
+			</picker>
+		</view>
+
+
+
+		<view class="flex_column_self big_left_margin">
+			<view class="paddingText">结束:</view>
+			<picker class='time-picker' mode="time" bindchange="bindEndTime2Change" start="00:00" end="23:59">
+				<input bindinput="end_time2" class="input" value="{{end_time2}}"></input>
+			</picker>
+		</view>
+
+	</view>
+
+
+
+	<view class="flex_row_self">
+		<view class="flex_column_self left_margin">
+			<view class="paddingText">温度检测时间:</view>
+
+			<input bindinput="tmp_check_time" class="big_input" value="{{tmp_check_time}}"></input>
+		</view>
+	</view>
+
+
+	<view class="flex_row_self">
+		<view class="flex_column_self left_margin">
+			<view class="paddingText">传感器检测时间:</view>
+
+			<input bindinput="sen_check_time" class="input" value="{{sen_check_time}}"></input>
+		</view>
+
+		<view class="flex_column_self big_left_margin">
+			<view class="paddingText">人体检测时间:</view>
+
+			<input bindinput="man_check_time" class="input" value="{{man_check_time}}"></input>
+		</view>
+
+	</view>
+	<view class="flex_row_self">
+		<view class="flex_column_self left_margin">
+			<view class="paddingText">重发间隔:</view>
+
+			<input bindinput="resend_check" class="input" value="{{resend_check}}"></input>
+		</view>
+
+		<view class="flex_column_self big_left_margin">
+			<view class="paddingText">警报温度:</view>
+
+			<input bindinput="warn_tem" class="input" value="{{warn_tem}}"></input>
+		</view>
+
+	</view>
+
+
+
+
+
+</view>
+
+
+<button class="button_blue flex_column" style="width: 75%; margin-top:20%;" id="add_button" bindtap="add">添加</button>

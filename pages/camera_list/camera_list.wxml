@@ -1,0 +1,27 @@
+<!--pages/camera_list/camera_list.wxml-->
+
+
+
+<bind_camera_dialog placeId="{{placeid}}" deviceId="{{}}" id='binddialogConfirm' bind:cancelEvent="bindcancelEvent"
+	bind:okEvent="bindokEvent"></bind_camera_dialog>
+<add_camera_dialog placeId="{{placeid}}" id='dialogConfirm' bind:cancelEvent="cancelEvent" bind:okEvent="okEvent">
+</add_camera_dialog>
+<titleBar wx:if="{{owner == 2}}" title_text="摄像头列表" bindmyevent="onRightImageTap" icon_src="../../images/add_wh.png"
+	icon_display="block"></titleBar>
+
+
+<view style="padding-top: 100rpx;" class="container">
+	<view class="touch-item  {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}"
+		bindtouchstart="touchstart" bindtouchmove="{{owner==2 ? 'touchmove' : ''}}" wx:key="" wx:for="{{cameraList}}">
+		<add_crmera bindtap="play" data-index="{{index}}" class="content" status="{{item.status}}" camera_id="{{item.id}}"
+			camera_naem="{{item.cameraName}}" camera_sn="{{item.deviceSerial}}" check_code="{{item.validateCode}}">
+		</add_crmera>
+		<view class="bind" catchtap="bind" data-index="{{index}}">绑定</view>
+		<view class="del" catchtap="del" data-index="{{index}}">删除</view>
+	</view>
+</view>
+
+
+<view wx:if="{{cameraList.length  == 0}}" class="flex_row  no_data">
+	<image src="../../images/no_data.png" mode="aspectFit"></image>
+</view>

@@ -1,0 +1,20 @@
+<view class="flex_column">
+	<map id="map" latitude="{{latitude}}" longitude="{{longitude}}" bindregionchange="mapchangeTap"  scale="20" show-location="true">
+		<image class="img-map" src="/images/center.png" />
+	</map>
+
+	<view class="flex_row">
+		<input class="input" style="margin:10px;" placeholder="输入关键字" auto-focus type="text" bindinput="bindKeyInput" value="{{inputText}}"/>
+		<view bindtap="select" class="text">
+			<view>选择</view>
+		</view>
+	</view>
+
+
+	<view wx:for="{{sugData}}"  class="sug_info"  bindtap="sugTap" data-index="{{index}}">
+		<text>{{item.name}}</text>
+	</view>
+
+
+
+</view>

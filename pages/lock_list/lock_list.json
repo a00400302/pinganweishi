@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "add_crmera":"../../Component/add_lock/add_lock",
+    "titleBar": "/Component/titleBar/titleBar",
+    "add_lock_dialog":"/Component/add_lock_dialog/add_lock_dialog",
+    "bind_lock_dialog":"/Component/bind_lock_dialog/bind_lock_dialog"
+  }
+}

@@ -1,0 +1,110 @@
+<!--pages/device_info/device_info.wxml-->
+<titleBar wx:if="{{ owner == 2}}" title_text="设备详情" bindmyevent="onRightImageTap" icon_src="../../images/edit_row_wh.png" icon_display="block"></titleBar>
+<titleBar wx:if="{{ owner != 2}}" title_text="设备详情" bindmyevent="onRightImageTap" icon_src="../../images/edit_row_wh.png" icon_display="none"></titleBar>
+
+<view class="flex_column"  style="padding-top: 100rpx;">
+
+	<view class="flex_row_self">
+		<text class="testTest">设备名称:</text>
+		<view class="right_text">
+			<text >{{devices_data.equipmentName}}</text>
+		</view>
+	</view>
+<view class="flex_row_self">
+		<text class="testTest">设备类型:</text>
+		<view class="right_text">
+			<text wx:if="{{devices_data.eqType == 1}}" >烟感</text>
+      <text wx:if="{{devices_data.eqType == 2}}" >人体</text>
+      <text wx:if="{{devices_data.eqType == 3}}" >人体+烟感</text>
+      <text wx:if="{{devices_data.eqType == 4}}" >应急按钮</text>
+      <text wx:if="{{devices_data.eqType == 5}}" >燃气</text>
+      <text wx:if="{{devices_data.eqType == 6}}" >煤气</text>
+      <text wx:if="{{devices_data.eqType == 7}}" >应急灯</text>
+      <text wx:if="{{devices_data.eqType == 8}}" >门磁</text>
+		</view>
+	</view>
+  <view class="flex_row_self">
+		<text class="testTest">设备状态:</text>
+		
+
+    <view class="right_text_red" wx:if="{{devices_data.warning == 2}}"  >
+    报警
+    </view>
+    <view class="right_text_yellow" wx:elif="{{devices_data.warning == 0 && devices_data.isWork == 0}}">
+    离线
+    </view>
+    <view class="right_text_gr" wx:elif="{{devices_data.warning == 0 && devices_data.isWork == 1}}" >
+    正常
+    </view>
+
+	
+	</view>
+  <view class="flex_row_self">
+		<text class="testTest">安装位置:</text>
+		<view class="right_text">
+			<text >{{devices_data.location}}</text>
+		</view>
+	</view>
+  <view class="flex_row_self"  bindtap="location">
+		<text class="testTest">所在场所:</text>
+		<view class="right_text">
+			<text >{{devices_data.placeName}} </text>
+			<image  src="../../images/icons_forward.png"  class="image"/>
+		</view>
+	</view>
+  <view class="flex_row_self">
+		<text class="testTest">实时视频:</text>
+    <view class="right_text"  bindtap="checkVideo">
+		  <image  src="../../images/play_video_bu.png"  class="image"/>
+    </view>
+			
+		
+	</view>
+  <view class="flex_row_self">
+		<text class="testTest">报警时段1:</text>
+		<view class="right_text">
+			<text >{{devices_data.startTime}} - {{devices_data.endTime}}</text>
+		</view>
+	</view>
+  <view class="flex_row_self">
+		<text class="testTest">报警时段2:</text>
+		<view class="right_text">
+			<text >{{devices_data.startTime2}} - {{devices_data.endTime2}}</text>
+		</view>
+	</view>
+  <view class="flex_row_self">
+		<text class="testTest">传感器检测时间(毫秒):</text>
+		<view class="right_text">
+			<text >{{devices_data.ygSensitivity}}</text>
+		</view>
+	</view>
+  <view class="flex_row_self">
+		<text class="testTest">人体检测时间(分钟):</text>
+		<view class="right_text">
+			<text >{{devices_data.checkTime}}</text>
+		</view>
+	</view>
+  <view class="flex_row_self">
+		<text class="testTest">重发间隔(时):</text>
+		<view class="right_text">
+			<text >{{devices_data.repeatTime}}</text>
+		</view>
+	</view>
+  <view class="flex_row_self">
+		<text class="testTest">警报温度(摄氏度):</text>
+		<view class="right_text">
+			<text >{{devices_data.temperatureWarn}}</text>
+		</view>
+	</view>
+  <view class="flex_row_self">
+		<text class="testTest">温度检测(分钟):</text>
+		<view class="right_text">
+			<text >{{devices_data.rtSensitivity}}</text>
+		</view>
+	</view>
+	<button  bindtap="onDealButton" class="button_blue button"  wx:if="{{devices_data.warning == 2}}">警报处理</button>
+
+</view>
+
+
+<deal_warn id='dialogConfirm' bindmyevent="okEvent" device_id="{{device_id}}" owner="{{owner}}"></deal_warn>

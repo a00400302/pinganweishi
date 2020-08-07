@@ -1,0 +1,29 @@
+
+<add_dialog id='dialogConfirm' bind:cancelEvent="cancelEvent" bind:okEvent="okEvent"></add_dialog>
+<add_concat placeId="{{placeid}}" id='dialogConfirm' bind:cancelEvent="cancelEvent" bind:okEvent="okEvent">
+</add_concat>
+<titleBar wx:if="{{owner == 2}}" title_text="设备列表" bindmyevent="onRightImageTap" icon_src="../../images/add_wh.png" icon_display="block"></titleBar>
+<titleBar wx:if="{{owner != 2}}" title_text="设备列表" bindmyevent="onRightImageTap" icon_src="../../images/add_wh.png" icon_display="none"></titleBar>
+
+
+
+
+<view   class="container">
+	<view  wx:for="{{concatlist}}" class="boder flex_row_self" style="padding:10px;">
+		<view >
+			{{item.nickname}}:{{item.phone}}  
+		</view>
+
+    <view  wx:if="{{isEdit == 2}}" class="call_text" bindtap="calltap" data-index="{{index}}">
+      拨打
+    </view>
+		<view  wx:if="{{isEdit == 1}}" class="call_text" style="color:red;" bindtap="calltap" data-index="{{index}}">
+      删除
+    </view>
+	</view>
+</view>
+
+
+<view  wx:if="{{concatlist.length  == 0}}" class="flex_row  no_data">
+	<image src="../../images/no_data.png" mode="aspectFit"></image>
+</view>

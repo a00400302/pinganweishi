@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "add_crmera":"../../Component/add_camera/add_camera",
+    "titleBar": "/Component/titleBar/titleBar",
+    "add_camera_dialog":"/Component/add_camera_dialog/add_camera_dialog",
+    "bind_camera_dialog":"/Component/bind_camera_dialog/bind_camera_dialog"
+  }
+}

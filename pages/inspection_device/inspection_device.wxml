@@ -1,0 +1,25 @@
+<!--pages/inspection_device/inspection_device.wxml-->
+<view class="flex_column">
+	<titleBar title_text="设备列表" bindmyevent="onRightImageTap" icon_src="../../images/scan_add_bk.png" icon_display="block"></titleBar>
+</view>
+
+
+<view style="padding-top: 100rpx;">
+	<view wx:for="{{deviceList}}" class="flex_row boder" style="padding:10px" bindtap="deviceTap" data-index="{{index}}">
+		<view>{{item.placeName}}</view>
+
+		<view style="width:60%"></view>
+		<view wx:if="{{item.isQualified == 1}}" class="text_green">
+			合格
+		</view>
+		<view wx:if="{{item.isQualified == 2}}" class="text_red">
+			不合格
+		</view>
+		<image class="img" src="/images/icons_forward.png"></image>
+	</view>
+
+
+	<view wx:if="{{deviceList.length  == 0}}" class="flex_row  no_data">
+		<image src="../../images/no_data.png" mode="aspectFit"></image>
+	</view>
+</view>

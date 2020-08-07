@@ -1,0 +1,21 @@
+<!--Component/add_dialog/add_dialog.wxml-->
+<view hidden='{{!isShow}}'>
+	<!-- 遮罩层 -->
+	<view class="chain-mask" bindtap="close"></view>
+	<view class='chain-dialog'>
+
+		<view class='chain-dialog-btn-view  flex_row'>
+			<view style="margin-left: 6%;margin-top: 4%;">
+				<image class="img" src="{{list1[1]}}"></image>
+			</view>
+			<view class='chain-dialog-btn' hover-stop-propagation="true" catchtap='byhand'>{{list1[0]}}</view>
+		</view>
+		<view class='chain-dialog-btn-view flex_row'>
+			<view style="margin-left: 6%;margin-top: 4%;">
+				<image class="img" src="{{list2[1]}}"></image>
+			</view>
+
+			<view class='chain-dialog-btn' hover-stop-propagation="true" catchtap='byqrCode'>{{list2[0]}}</view>
+		</view>
+	</view>
+</view>

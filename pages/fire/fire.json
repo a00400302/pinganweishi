@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "titleBar": "/Component/titleBar/titleBar",
+    "add_dialog": "/Component/add_dialog/add_dialog",
+    "place_item":"/Component/place_item/place_item"
+  }
+}

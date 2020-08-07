@@ -1,0 +1,43 @@
+<!--Component/add_camera.wxml-->
+<view class="border">
+
+
+
+
+
+	<view class="image_layout"  bindtap="playVideo">
+		<image class="image" src="../../images/camera_bg_black.png" mode="aspectFill" />
+	</view>
+
+	<view wx:if="{{status == 1}}" class="image_status_layout">
+		<image class="image_status" src="../../images/play_button.png" mode="aspectFit	" />
+	</view>
+
+	<view wx:if="{{status == 0}}" class="image_online_layout">
+		<image class="image_online" src="../../images/offline.png" mode="aspectFit	" />
+	</view>
+
+
+
+
+
+
+
+
+	<view>
+		<view class="flex_row" style="margin-top:15px">
+			<view>名 称:</view>
+			<view>{{camera_naem}}</view>
+		</view>
+
+		<view class="flex_row" style="margin-top:10px">
+			<view>序列号:</view>
+			<view>{{camera_sn}}</view>
+		</view>
+
+		<view class="flex_row" style="margin-top:10px">
+			<view>验证码:</view>
+			<view>{{check_code}}</view>
+		</view>
+	</view>
+</view>
