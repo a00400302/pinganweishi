@@ -1,82 +1,88 @@
 <!--pages/person/person.wxml-->
 <view class='title_bar container'>
+    <image class="left_image" src="/images/person_img_head_normal.png"> </image>
 
 
+    <view wx:if="{{isLogin}}" class="flex_column_self">
+        <view class="text">{{username}}</view>
+        <view class="phone_text">{{phone}}</view>
+    </view>
 
-	<image class="left_image" src="/images/person_img_head_normal.png"> </image>
-	<view class="flex_column_self">
-		<view class="text">{{username}}</view>    
-		<view class="phone_text">{{phone}}</view>
-	</view>
+    <view wx:if="{{!isLogin}}" class="flex_column_self">
+        <view  bindtap="changetologin">
+            <view class="text">点击登录</view>
+            <view class="phone_text"> </view>
+        </view>
+    </view>
 </view>
 
 
-<view class="box  flex_row_self"  bindtap="place_edit">
-	<view>
-		<image class="img" src="/images/icon_mine_list01.png"></image>
-	</view>
-	<view style="margin-top:4%;">
-		场所管理
-	</view>
+<view class="box  flex_row_self" bindtap="place_edit">
+    <view>
+        <image class="img" src="/images/icon_mine_list01.png"></image>
+    </view>
+    <view style="margin-top:4%;">
+        场所管理
+    </view>
 
-	<view style="width:45%">
-	</view>
-	<view>
+    <view style="width:45%">
+    </view>
+    <view>
 
-		<image class="img" src="/images/icons_forward.png"></image>
-	</view>
-
-</view>
-
-<view class="box  flex_row_self"   bindtap="push_edit">
-	<view>
-		<image class="img" src="/images/icon_mine_list02.png"></image>
-	</view>
-	<view style="margin-top:4%;">
-		推送管理
-	</view>
-
-	<view style="width:45%">
-	</view>
-	<view>
-
-		<image class="img" src="/images/icons_forward.png"></image>
-	</view>
+        <image class="img" src="/images/icons_forward.png"></image>
+    </view>
 
 </view>
 
-<view class="box  flex_row_self"  bindtap="history">
-	<view>
-		<image class="img" src="/images/icon_mine_list03.png"></image>
-	</view>
-	<view style="margin-top:4%;">
-		历史信息
-	</view>
+<view class="box  flex_row_self" bindtap="push_edit">
+    <view>
+        <image class="img" src="/images/icon_mine_list02.png"></image>
+    </view>
+    <view style="margin-top:4%;">
+        推送管理
+    </view>
 
-	<view style="width:45%">
-	</view>
-	<view>
+    <view style="width:45%">
+    </view>
+    <view>
 
-		<image class="img" src="/images/icons_forward.png"></image>
-	</view>
+        <image class="img" src="/images/icons_forward.png"></image>
+    </view>
+
+</view>
+
+<view class="box  flex_row_self" bindtap="history">
+    <view>
+        <image class="img" src="/images/icon_mine_list03.png"></image>
+    </view>
+    <view style="margin-top:4%;">
+        历史信息
+    </view>
+
+    <view style="width:45%">
+    </view>
+    <view>
+
+        <image class="img" src="/images/icons_forward.png"></image>
+    </view>
 
 </view>
 
 
 
-<view class="box  flex_row_self"  bindtap="about">
-	<view>
-		<image class="img" src="/images/icon_mine_list07.png"></image>
-	</view>
-	<view style="margin-top:4%;">
-		关于乐家安居
-	</view>
+<view class="box  flex_row_self" bindtap="about">
+    <view>
+        <image class="img" src="/images/icon_mine_list07.png"></image>
+    </view>
+    <view style="margin-top:4%;">
+        关于瓶安卫士
+    </view>
 
-	<view style="width:35%">
-	</view>
-	<view>
+    <view style="width:35%">
+    </view>
+    <view>
 
-		<image class="img" src="/images/icons_forward.png"></image>
-	</view>
+        <image class="img" src="/images/icons_forward.png"></image>
+    </view>
 
 </view>

@@ -1,0 +1,8 @@
+/* pages/User/User.wxss */
+
+
+
+.intro {
+  font-size: 28rpx;
+  line-height: 1.6;
+}

@@ -198,11 +198,6 @@ Page({
       )
       .then(res => {
         if (res.data['code'] == 0) {
-          wx.setStorage({
-            key: 'user',
-            data: res.data['data'],
-          })
-
           wx.navigateBack({
             delta: 1,
           })

@@ -14,9 +14,8 @@ Component({
    */
   data: {
     isShow: false,
-    device_sn: null,
-    device_name: null,
-    device_check_code: null,
+    username: null,
+    userphone: null,
     fail: function () {},
     success: function () {}
   },
@@ -78,9 +77,8 @@ Component({
       this.close()
       this.data.fail()
       this.setData({
-        device_name: "",
-        device_sn: "",
-        device_check_code: ""
+        username: "",
+        userphone: "",
       })
     },
     /**
@@ -88,11 +86,10 @@ Component({
      */
     _okClick() {
       this.close()
-      this.data.success(this.properties.placeId,this.data.device_sn,this.data.device_check_code,this.data.device_name)
+      this.data.success(this.data.username,this.data.userphone)
       this.setData({
-        device_name: "",
-        device_sn: "",
-        device_check_code: ""
+        username: "",
+        userphone: "",
       })
     },
     device_name: function (e) {
@@ -101,7 +98,7 @@ Component({
       var val = e.detail.value;
       console.log(val);
       that.setData({
-        device_name: val
+        username: val
       });
     },
   
@@ -110,17 +107,9 @@ Component({
       var val = e.detail.value;
       console.log(val);
       that.setData({
-        device_sn: val
+        userphone: val
       });
     },
   
-    device_check_code: function (e) {
-      var that = this
-      var val = e.detail.value;
-      console.log(val);
-      that.setData({
-        device_check_code: val
-      });
-    },
   }
 })

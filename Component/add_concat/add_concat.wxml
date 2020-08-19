@@ -7,25 +7,19 @@
 
 		<view class="flex_row">
 			<view>
-			名 称：
+			姓  名：
 			</view>
-			<input bindinput="device_name" class="input" value="{{device_name}}"></input>
+			<input bindinput="device_name" class="input" value="{{username}}"></input>
 		</view>
 
 		<view class="flex_row">
 			<view>
-			序列号：
+			电  话：
 			</view>
-			<input bindinput="device_sn" class="input" value="{{device_sn}}"></input>
+			<input bindinput="device_sn" class="input" value="{{userphone}}"></input>
 		</view>
 
-		
-		<view class="flex_row">
-			<view>
-			验证码：
-			</view>
-			<input bindinput="device_check_code" class="input" value="{{device_check_code}}"></input>
-		</view>
+	
 
 		<view class='chain-dialog-btn-view'>
 			<view class='chain-dialog-btn' bindtap='_cancelClick'>{{cancelText}}</view>

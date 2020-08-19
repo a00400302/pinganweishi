@@ -4,7 +4,7 @@
 
 
 <view class="flex_column">
-	<titleBar title_text="巡检" bindmyevent="onRightImageTap" icon_src="../../images/place_marker_wh.png" icon_display="block"></titleBar>
+	<titleBar title_text="巡检" bindmyevent="onRightImageTap" icon_src="../../images/place_marker_wh.png" icon_display="none"></titleBar>
 
 </view>
 
@@ -17,4 +17,9 @@
 
 <view wx:if="{{placelist.length  == 0}}" class="flex_row  no_data">
 	<image src="../../images/no_data.png" mode="aspectFit"></image>
+</view>
+
+
+<view wx:if="{{isLogin == 0}}" class="flex_row"  style="margin-top:100px;">
+	<view>请先到"我的" 页面 点击登录</view>
 </view>

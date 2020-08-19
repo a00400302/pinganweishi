@@ -1,6 +1,8 @@
 {
   "pages": [
-    "pages/login/login",
+    "pages/fire/fire",
+    "pages/User/User",
+    "pages/Privacy/Privacy",
     "pages/concat_edit/concat_edit",
     "pages/history/history",
     "pages/push_edit/push_edit",
@@ -19,14 +21,14 @@
     "pages/modules/modules",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/fire/fire",
     "pages/person/person",
     "pages/inspection/inspection",
     "pages/place_edit/place_edit",
     "pages/place_info/place_info",
     "pages/place_share/place_share",
     "pages/lock_list/lock_list",
-    "pages/about/about"
+    "pages/about/about",
+    "pages/login/login"
   ],
   "permission": {
     "scope.userLocation": {

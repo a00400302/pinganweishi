@@ -10,6 +10,7 @@ Page({
     owner: 2,
     isEdit: 2,
     concatlist: [],
+    usersString:""
   },
   calltap: function (e) {
     console.log(e)
@@ -49,6 +50,8 @@ Page({
       placeId: options.placeId,
       owner: options.owner
     })
+    this.dialogConfirm = this.selectComponent('#dialogConfirm')
+    this.add_concat  = this.selectComponent('#add_concat')
   },
 
   /**
@@ -64,9 +67,16 @@ Page({
   onShow: function () {
     console.log(this.data.placeId)
     httpNetwork.queryContact(this.data.placeId).then(res => {
+      var string = ""
+      res.data["data"].forEach(element => {
+          string += element.nickname + "-" +element.phone+ ","
+      });
+
       this.setData({
-        concatlist: res.data["data"]
+        concatlist: res.data["data"],
+        usersString:string
       })
+
     }).catch(res => {
       console.log(res)
     })
@@ -128,8 +138,17 @@ Page({
       qrCode: this.qrCode
     })
   },  
+  showAdd:function(){
+      this.add_concat.showNew({
+        iisShow: true,
+        cancelText:'取消',
+        okText:'确定',
+        fail:this.fail,
+        success:this.success,
+      });
+  },
   hand: function () {
-    
+    this.showAdd();
   },
   qrCode: function () {
     if (this.data.isEdit == 2) {
@@ -142,4 +161,26 @@ Page({
       })
     }
   },
+  fail:function(){
+
+  },
+  success: function(username,userphone){
+    console.log(username)
+    console.log(userphone)
+    this.setData({
+      usersString:this.data.usersString  +=  username + "-"+userphone+",",
+    })
+    
+        httpNetwork.updatePlaceUser(this.data.placeId,this.data.usersString).then(res =>{
+          this.onShow()
+        }).catch(res =>{
+            wx.showToast({
+              title: '添加失败，请重新',
+            })
+        })
+  },canceltap:function(e) {
+    this.setData({
+      isEdit : 2,
+    })
+  }
 })

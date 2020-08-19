@@ -3,19 +3,42 @@
 
 <view class="section bc_white">
 
-	
-		<view class="section flex_row">
-			<image src="../../images/logo.png" class="img" />
-		</view>
+
+	<view class="section flex_row">
+		<image src="../../images/logo.png" class="img" />
+	</view>
 	<view class="bg"></view>
 
 	<view>
 		<image src="../../images/bottombg.png" class="bg-header" />
 	</view>
-	
+
 </view>
 
 
 
-<!-- <button  class="button_white flex_column" style="width: 75%; margin-top:20%;"  id="login_button" bindtap="login" >授权登录</button> -->
-<button  class="button_white flex_column" style="width: 75%; margin-top:20%;"  id="login_button" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">授权登录</button>
+
+<button wx:if="{{isShowLogin}}" class="button_white flex_column" style="width: 75%; margin-top:20%;"  id="login_button" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">授权登录</button>
+
+
+
+<button wx:if="{{canIUse&&!isShowLogin}}" class="button_white flex_column" style="width: 75%; margin-top:20%;" open-type="getUserInfo"
+	bindgetuserinfo="bindGetUserInfo">获取权限</button>
+
+<view style="margin:20px;">
+	<checkbox-group  bindchange="checkboxChange">
+
+		<block wx:for="{{items}}" wx:item="item">
+			<view class="item">
+				<checkbox  checked="{{item.checked}}" color="{{item.color}}" disabled="{{item.disabled}}">
+				</checkbox>
+				<p>用户协议需要您同意</p><p class='agree-p' bind:tap="agreeUser">《用户协议》</p><p>和</p><p class='agree-p' bind:tap="agreePrivacy">《隐私保护条款》</p><p>方可登陆使用。您是否同意？</p>
+			</view>
+		</block>
+		
+		
+
+</checkbox-group>
+
+
+</view>

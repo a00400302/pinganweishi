@@ -5,16 +5,26 @@ Page({
    * 页面的初始数据
    */
   data: {
+        isLogin:false,
         username:"",
         phone:"",
         type:"",
   },
-
+  changetologin: function(options){
+      wx.redirectTo({
+        url: '/pages/login/login',
+      })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var that=this;
+    if(getApp().globalData.token != null){
+      this.setData({
+        isLogin:true
+      })
+    }
       wx.getStorage({
         key: 'user',
         success:function(user){

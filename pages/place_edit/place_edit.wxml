@@ -17,7 +17,7 @@
 
 
 
-<view  wx:if="{{isEdit}}" class="flex_row" style="width:100%;padding: 12px;position:fixed; bottom:0;width: 750rpx;background-color: white;">
+<view  wx:if="{{isEdit}}" class="flex_row" style="width:100%;padding: 12px;position:fixed; bottom:0;width: 750rpx;background-color: white">
 
 	<view class="flex_row" style="width: 49%;" bindtap="cancelTap">
 		<view>
@@ -35,7 +35,7 @@
 
 
 
-<view  wx:if="{{isEdit}}" class="flex_row" style="width:100%;padding: 12px;">
+<!-- <view  wx:if="{{isEdit}}" class="flex_row" style="width:100%;padding: 12px;">
 
 	<view class="flex_row" style="width: 49%;" >
 		<view>
@@ -49,7 +49,7 @@
 			删除
 		</view>
 	</view>
-</view>
+</view> -->
 
 
 

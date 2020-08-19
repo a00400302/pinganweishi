@@ -1,0 +1,13 @@
+/* pages/Privacy/Privacy.wxss */
+
+
+
+.intro {
+  font-size: 28rpx;
+  line-height: 1.6;
+}
+
+
+.intro2{
+  font-size: 25rpx;
+}

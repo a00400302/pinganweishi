@@ -10,7 +10,13 @@ Page({
    * 页面的初始数据
    */
   data: {
+    isLogin:0,
     placelist: null,
+  },
+  changetologin: function(e){
+    wx.redirectTo({
+      url: '/pages/login/login',
+    })
   },
 
   /**
@@ -73,6 +79,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    if(getApp().globalData.token != null){
+      this.setData({
+        isLogin:1
+      })
+    }
     httpNetwork.getFireControlQueryPlace(1).then(res => {
         if (res.data['code'] == 0) {
           console.log(res.data['data']['listPlace']);

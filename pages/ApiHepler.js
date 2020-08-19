@@ -1,5 +1,13 @@
+// 线上
 var host = "http://139.159.230.78/surpass/mobile"
 var image_host = "http://139.159.230.78/surpass"
+// 测试
+// var host = "http://139.159.189.37/surpass/mobile"
+// var image_host = "http://139.159.189.37/surpass"
+
+
+// var host = "http://192.168.2.122:81/surpass/mobile"
+// var image_host = "http://192.168.2.122:81/surpass"
 
 const configApi = {
     //用户登录
@@ -23,7 +31,7 @@ const configApi = {
         var urlStr = `${host}/queryPlaceByUserId`
 
         var parameters
-
+        console.log(getApp().globalData.token);
         parameters = {
             token: getApp().globalData.token,
             placeType: placeType,
@@ -352,15 +360,16 @@ const configApi = {
     
 
 
-    userLogin: function ( placeId, arr) {
+    userLogin: function (encryptedData,iv,sessionKey,openId,nickName,gender) {
         var urlStr = `${image_host}/weix/userLogin`
         var parameters
         parameters = {
-            encryptedData: e.detail.encryptedData,
-            iv: e.detail.iv,
-            sessionKey: that.data.session_key,
-            userEncryptedData:res.encryptedData,
-            useriv:res.iv,
+            encryptedData: encryptedData,
+            iv: iv,
+            sessionKey:sessionKey,
+            openId:openId,
+            nickName:nickName,
+            gender:gender,
         }
 
         return postRequest(urlStr, parameters)
@@ -618,7 +627,7 @@ function httpRequest(urlStr, paramerers, method) {
                 wx.hideLoading()
             } else {
                 wx.showToast({
-                    title: '服务器异常',
+                    title: '请登录后再继续操作',
                     icon: 'none'
                 })
             }

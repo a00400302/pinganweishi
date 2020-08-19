@@ -82,3 +82,33 @@ page {
   background: #6699ff;
   margin-bottom: 5px;
 }
+
+
+
+
+.agree-p {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+p{
+  font-size: 12px;
+}
+
+
+
+
+.item {
+  margin-top: 20px;
+  
+}
+
+.selected {
+  margin-top: 50rpx;
+  font-size: 30rpx;
+}
+
+
+
+
+

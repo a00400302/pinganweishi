@@ -1,4 +1,4 @@
 {
   "usingComponents": {
-    "titleBarText":"/Component/titleBarText/titleBarText","add_dialog": "/Component/add_dialog/add_dialog","add_concat":"/Component/add_concat/add_concat"}
+    "titleBar":"/Component/titleBar/titleBar","add_dialog": "/Component/add_dialog/add_dialog","add_concat":"/Component/add_concat/add_concat"}
 }

@@ -32,7 +32,7 @@
     "packNpmRelationList": []
   },
   "compileType": "miniprogram",
-  "libVersion": "2.0.4",
+  "libVersion": "2.10.4",
   "appid": "wxeeabd53d4e0a012a",
   "projectname": "lejaanju",
   "debugOptions": {

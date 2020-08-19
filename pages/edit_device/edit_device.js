@@ -212,11 +212,6 @@ Page({
        this.data.start_time1, this.data.end_time1, this.data.start_time2, this.data.start_time2)
     .then(res => {
       if (res.data['code'] == 0) {
-        wx.setStorage({
-          key: 'user',
-          data: res.data['data'],
-        })
-
         wx.navigateBack({
           delta: 1,
         })

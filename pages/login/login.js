@@ -3,42 +3,147 @@ var httpNetwork = require("../ApiHepler.js")
 
 Page({
   getPhoneNumber(e) {
-    
     var that = this;
     console.log(e.detail.errMsg == "getPhoneNumber:ok");
     if (e.detail.errMsg == "getPhoneNumber:ok") {
-            wx.getUserInfo({
-              success:function(res){
-                console.log(res)
-                console.log(res.userInfo.nickName)
-                console.log(res.userInfo.gender)
-                console.log(that.data.openId)
-                wx.request({
-                  url: 'http://192.168.2.122:81/surpass/weix/userLogin',
-                  data: {
-                    encryptedData: e.detail.encryptedData,
-                    iv: e.detail.iv,
-                    sessionKey: that.data.session_key,
-                    openId:that.data.openId,
-                    nickName:res.userInfo.nickName,
-                    gender:res.userInfo.gender,
-                    
-                  },
-                  header: {
-                    'content-type': 'application/x-www-form-urlencoded'
-                  },
-                  method: "POST",
-                  success: function (res) {
-                    console.log(res);
-                  }
-                })
-              }
+      wx.getUserInfo({
+        success: function (res) {
+          console.log(res)
+          console.log(res.userInfo.nickName)
+          console.log(res.userInfo.gender)
+          console.log(that.data.openId)
+
+          httpNetwork.userLogin(
+            e.detail.encryptedData,
+            e.detail.iv,
+            that.data.session_key,
+            that.data.openId,
+            res.userInfo.nickName,
+            res.userInfo.gender).then(res => {
+
+            console.log(res.data.data.token);
+            console.log(res);
+            getApp().globalData.token = res.data.data.token;
+                    // wx.setStorage({
+        //   key: 'user',
+        //   data: res.data['data'],
+        // })
+            wx.switchTab({
+              url: '/pages/fire/fire',
             })
+          }).catch(res => {
+            console.log(res.data.data.token);
+          })
+        }
+      })
+    }
+
+    // httpNetwork.mobileUserLogin(this.data.phone,this.data.password).then(res =>{
+    //                         console.log(res.data.data.token);
+    //                 getApp().globalData.token = res.data.data.token;
+    //                 wx.switchTab({
+    //                   url: '/pages/fire/fire',
+    //                 })
+    // }).catch(res =>{
+    //   wx.showToast({
+    //     title: "密码或帐号不正确",
+    //   })
+
+    // })
+  },
+  bindGetUserInfo: function (e) {
+    var that  =this
+    console.log(this.data.isCheck)
+    if (this.data.isCheck) {
+      this.setData({
+        isShowLogin: true
+      })
+      wx.login({
+        success(res) {
+          console.log(res);
+          var code = res.code
+          httpNetwork.getOpenId(code).then(res =>{
+              console.log(res.data.data.openid);
+              that.setData({
+                openId:res.data.data.openid,
+                session_key:res.data.data.session_key
+              });
+              wx.showToast({
+                title: "再次点击登录"
+              })
+          }).catch(res =>{
+            
+          })
+          // wx.request({
+          //   url: 'http://192.168.2.122:81/surpass/weix/getOpenId',
+          //   method: "get",
+          //   data: {
+          //     code
+          //   },
+          //   success: function (res) {
+          //     console.log(res.data.data.openid);
+          //     that.setData({
+          //       openId:res.data.data.openid,
+          //       session_key:res.data.data.session_key
+          //     });
+          //   }
+          // })
+        }
+      })
+
+    } else {
+      wx.showToast({
+        title: "请同意协议"
+      })
     }
   },
+  checkboxChange : function (event) {
+    console.log('checkbox发生change事件，携带value值为：', event.detail.value)
+    if(event.detail.value[0] == ""){
+      console.log('选中')
+      this.setData({
+        isCheck: true
+      })
+    }else{
+      console.log('未选中')
+      this.setData({
+        isCheck: false
+      })
+    }
+    
+  },
+  agreeUser: function (e) {
+    wx.redirectTo({
+      url: '/pages/User/User',
+    })
+  },
+  agreePrivacy: function (e) {
+    wx.redirectTo({
+      url: '/pages/Privacy/Privacy',
+    })
+  },
   data: {
-    openId:"",
+    isShowGet: false,
+    isShowLogin: false,
+    isCheck: false,
+    canIUse: wx.canIUse("button.open-type.getUserInfo"),
+    openId: "",
     session_key: "",
+    phone: "",
+    password: "",
+    items: [
+      { name: 'USA', value: '美国', color: '#6699ff',},
+    ],
+  },
+  phone: function (e) {
+    this.setData({
+      phone: e.detail.value
+    })
+  },
+  password: function (e) {
+    this.setData({
+      password: e.detail.value
+    })
   },
 
   /**
@@ -46,24 +151,16 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    // 登录
-    wx.login({
-      success(res) {
-        console.log(res);
-        var code = res.code
-        wx.request({
-          url: 'http://192.168.2.122:81/surpass/weix/getOpenId',
-          method: "get",
-          data: {
-            code
-          },
-          success: function (res) {
-            console.log(res.data.data.openid);
-            that.setData({
-              openId:res.data.data.openid,
-              session_key:res.data.data.session_key
-            });
-          }
+    wx.getUserInfo({
+      success: function (res) {
+        that.setData({
+          isShowGet: false
+        })
+
+      },
+      fail: function (res) {
+        that.setData({
+          isShowGet: true
         })
       }
     })
