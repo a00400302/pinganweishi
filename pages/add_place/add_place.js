@@ -9,8 +9,8 @@ Page({
     place_name: null,
     place_area: null,
     place_location: null,
-    lat:null,
-    lng:null,
+    lat: null,
+    lng: null,
     place_type: null,
     array: ["公司企业",
       "工厂企业",
@@ -56,7 +56,7 @@ Page({
       place_type: val
     });
   },
-  getIndex:function(arr, item) {
+  getIndex: function (arr, item) {
     var i = 0;
     for (i in arr) {
       if (arr[i] == item) {
@@ -137,41 +137,46 @@ Page({
 
   },
   add: function () {
-    var i = this.getIndex(this.data.strings,this.data.place_area)
+    wx.hideKeyboard();
+    var i = this.getIndex(this.data.strings, this.data.place_area)
     var areaId = this.data.areaArray[i]['id'];
     console.log(this.data.lat)
-		console.log(this.data.lng)
-    if(this.data.lat == null ||  this.data.lng == null){
-        wx.showToast({
-          title: '请选择地址',
-        })
-    }else{
-      var type = this.data.array.indexOf(this.data.place_type)
-      httpNetwork.uploadPlace(this.data.place_name, this.data.place_location, this.data.place_area,this.data.place_location ,type , areaId, this.data.lat, this.data.lng).then(res => {
+    console.log(this.data.lng)
+    if (this.data.lat == null && this.data.lng == null) {
+      wx.showToast({
+        title: '请选择地址',
+      })
+    } else {
+      var type = this.data.array.indexOf(this.data.place_type) + 1
+
+
+      httpNetwork.uploadPlace(this.data.place_name, this.data.place_location, this.data.place_area, this.data.place_location, type, areaId, this.data.lat, this.data.lng).then(res => {
         wx.navigateBack({
           delta: 1,
         })
-    }).catch(res => {
+      }).catch(res => {
 
-    })
+      })
     }
   },
   area: function (e) {
+    wx.hideKeyboard();
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       place_area: this.data.strings[e.detail.value]
     })
   },
   place_type: function (e) {
+    wx.hideKeyboard();
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       place_type: this.data.array[e.detail.value]
     })
   },
   map: function (e) {
+    wx.hideKeyboard();
     wx.navigateTo({
       url: '../../pages/place_map/place_map',
     })
   },
-
 })

@@ -2,8 +2,8 @@
 <add_dialog id='dialogConfirm' bind:cancelEvent="cancelEvent" bind:okEvent="okEvent"></add_dialog>
 <add_concat placeId="{{placeid}}" id='add_concat' bind:cancelEvent="cancelEvent" bind:okEvent="okEvent">
 </add_concat>
-<titleBar wx:if="{{owner == 2}}" title_text="设备列表" bindmyevent="onRightImageTap" icon_src="../../images/add_wh.png" icon_display="block"></titleBar>
-<titleBar wx:if="{{owner != 2}}" title_text="设备列表" bindmyevent="onRightImageTap" icon_src="../../images/add_wh.png" icon_display="none"></titleBar>
+<titleBar wx:if="{{owner == 2}}" title_text="联系人" bindmyevent="onRightImageTap" icon_src="../../images/add_wh.png" icon_display="block"></titleBar>
+<titleBar wx:if="{{owner != 2}}" title_text="联系人" bindmyevent="onRightImageTap" icon_src="../../images/add_wh.png" icon_display="none"></titleBar>
 
 
 
@@ -24,7 +24,7 @@
 </view>
 
 
-<button  style="margin-top: 300rpx;    background-color: #6699ff; color: white;" wx:if="{{isEdit == 1}}"  class="button_blue" bindtap="canceltap" data-index="{{index}}">
+<button  style="margin-top: 300rpx;    background-color: #6699ff; color: white;" wx:if="{{isEdit == 1 && concatlist.length > 0}}"  class="button_blue" bindtap="canceltap" data-index="{{index}}">
 	取消编辑
 </button>
 

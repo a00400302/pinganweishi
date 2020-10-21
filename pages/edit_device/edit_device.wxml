@@ -26,7 +26,6 @@
 
 			<input bindinput="device_location" class="input"  value="{{device_location}}"></input>
 		</view>
-
 	</view>
 
 	<view class="flex_row_self">
@@ -34,7 +33,7 @@
 			<view class="paddingText">报警时段1开始:</view>
 
 			<picker class='time-picker' mode="time" bindchange="bindStarTime1Change" start="00:00" end="23:59">
-				<input bindinput="start_time1" class="input" value="{{start_time1}}"></input>
+				<input bindinput="start_time1" class="big_input" value="{{start_time1}}"></input>
 			</picker>
 		</view>
 
@@ -43,7 +42,7 @@
 		<view class="flex_column_self big_left_margin">
 			<view class="paddingText">结束:</view>
 			<picker class='time-picker' mode="time" bindchange="bindEndTime1Change" start="00:00" end="23:59">
-				<input bindinput="end_time1" class="input" value="{{end_time1}}"></input>
+				<input bindinput="end_time1" class="big_input " value="{{end_time1}}"></input>
 			</picker>
 		</view>
 
@@ -56,9 +55,8 @@
 	<view class="flex_row_self">
 		<view class="flex_column_self left_margin">
 			<view class="paddingText">报警时段2开始:</view>
-
 			<picker class='time-picker' mode="time" bindchange="bindStarTime2Change" start="00:00" end="23:59">
-				<input bindinput="start_time2" class="input" value="{{start_time2}}"></input>
+				<input bindinput="start_time2" class="big_input" value="{{start_time2}}"></input>
 			</picker>
 		</view>
 
@@ -66,7 +64,7 @@
 		<view class="flex_column_self big_left_margin">
 			<view class="paddingText">结束:</view>
 			<picker class='time-picker' mode="time" bindchange="bindEndTime2Change" start="00:00" end="23:59">
-				<input bindinput="end_time2" class="input" value="{{end_time2}}"></input>
+				<input bindinput="end_time2" class="big_input" value="{{end_time2}}"></input>
 			</picker>
 		</view>
 
@@ -77,8 +75,7 @@
 	<view class="flex_row_self">
 		<view class="flex_column_self left_margin">
 			<view class="paddingText">温度检测时间:</view>
-
-			<input bindinput="tmp_check_time" class="big_input"  value="{{tmp_check_time}}"></input>
+			<input bindinput="tmp_check_time" class="input"  value="{{tmp_check_time}}"></input>
 		</view>
 	</view>
 
@@ -86,7 +83,6 @@
 	<view class="flex_row_self">
 		<view class="flex_column_self left_margin">
 			<view  class="paddingText">传感器检测时间:</view>
-
 			<input  bindinput="sen_check_time" class="input"   value="{{sen_check_time}}"></input>
 		</view>
 
@@ -100,13 +96,11 @@
 	<view class="flex_row_self">
 		<view class="flex_column_self left_margin">
 			<view class="paddingText">重发间隔:</view>
-
 			<input bindinput="resend_check"  class="input"  value="{{resend_check}}"></input>
 		</view>
 
 		<view class="flex_column_self big_left_margin">
 			<view class="paddingText">警报温度:</view>
-
 			<input bindinput="warn_tem" class="input"  value="{{warn_tem}}"></input>
 		</view>
 

@@ -202,7 +202,7 @@ Page({
   onShareAppMessage: function () {
 
   },
-  change:function(){ 
+  change:function(){
     httpNetwork.setDevice(this.data.device_id, this.data.placeId, this.data.device_sn, this.data.device_location, this.data.device_name,
       this.data.sen_check_time,
       this.data.man_check_time,

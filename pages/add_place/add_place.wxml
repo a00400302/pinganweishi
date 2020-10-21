@@ -5,7 +5,7 @@
 	<view class="flex_row_self">
 		<view class="flex_column_self left_margin">
 			<view class="paddingText">场所名称:</view>
-			<input bindinput="place_name" class="big_input" value="{{place_name}}"></input>
+			<input bindinput="place_name" class="input" value="{{place_name}}"></input>
 		</view>
 	</view>
 
@@ -20,9 +20,6 @@
 				</view>
 			</picker>
 
-
-
-
 		</view>
 	</view>
 
@@ -32,7 +29,8 @@
 			<view class="paddingText">场所地址:</view>
 			<view class="flex_row_self" bindtap="map">
 				<input bindinput="tmp_check_time" class="big_input" value="{{place_location}}"></input>
-				<image style="margin-left:2%;width: 40px;height: 40px;" src="../../images/place_marker_bu.png" mode="aspectFit"></image>
+				<image style="margin-left:2%;width: 40px;height: 40px;" src="../../images/place_marker_bu.png" mode="aspectFit">
+				</image>
 			</view>
 		</view>
 	</view>
@@ -40,20 +38,16 @@
 	<view class="flex_row_self">
 		<view class="flex_column_self left_margin">
 			<view class="paddingText">场所类型:</view>
-			<view class="flex_row_self">
-				<picker class='time-picker' bindchange="place_type" value="{{index}}" range="{{array}}">
+
+			<picker class='time-picker' bindchange="place_type" value="{{index}}" range="{{array}}">
+				<view class="flex_row_self">
 					<input bindinput="tmp_check_time" class="big_input" value="{{place_type}}"></input>
-				</picker>
-				<view style="color:#6699ff;margin-left:2%;">选择</view>
-			</view>
+					<view style="color:#6699ff;margin-left:2%;">选择</view>
+				</view>
+			</picker>
+
 		</view>
 	</view>
-
-
-
-
-
-
 
 
 

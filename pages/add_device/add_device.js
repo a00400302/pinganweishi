@@ -10,8 +10,8 @@ Page({
     placeId: "",
     device_name: "",
     device_location: "",
-    start_time1: "",
-    end_time1: "",
+    start_time1: "00:00",
+    end_time1: "23:59",
     start_time2: "",
     end_time2: "",
     tmp_check_time: "",
@@ -52,7 +52,6 @@ Page({
       start_time1: val
     });
   },
-
 
   end_time1: function (e) {
     var that = this
@@ -126,7 +125,7 @@ Page({
   onLoad: function (options) {
     this.setData({
       placeId: options.placeId,
-      device_sn:options.sn
+      device_sn: options.sn
     })
 
 
@@ -214,28 +213,30 @@ Page({
       })
 
 
-  },  bindStarTime1Change: function(e) {
+  },
+  bindStarTime1Change: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       start_time1: e.detail.value
     })
-  },  bindStarTime2Change: function(e) {
+  },
+  bindStarTime2Change: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       start_time2: e.detail.value
     })
   },
-  bindEndTime1Change: function(e) {
+  bindEndTime1Change: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       end_time1: e.detail.value
     })
   },
-  bindEndTime2Change: function(e) {
+  bindEndTime2Change: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       end_time2: e.detail.value
     })
   },
-  
+
 })

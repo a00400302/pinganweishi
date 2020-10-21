@@ -1,13 +1,6 @@
-// 线上
-var host = "http://139.159.230.78/surpass/mobile"
-var image_host = "http://139.159.230.78/surpass"
-// 测试
-// var host = "http://139.159.189.37/surpass/mobile"
-// var image_host = "http://139.159.189.37/surpass"
+var host = "https://www.zsyuxinkeji.com/surpass/mobile"
+var image_host = "https://www.zsyuxinkeji.com/surpass"
 
-
-// var host = "http://192.168.2.122:81/surpass/mobile"
-// var image_host = "http://192.168.2.122:81/surpass"
 
 const configApi = {
     //用户登录
@@ -20,7 +13,6 @@ const configApi = {
             account: account,
             pwd: pwd,
             pushToken: ""
-
         }
 
         return postRequest(urlStr, parameters)
@@ -94,9 +86,7 @@ const configApi = {
     },
     getFireControlSmokeAreaList: function () {
         var urlStr = `${host}/fireArea`
-
         var parameters
-
         parameters = {
             token: getApp().globalData.token,
         }
@@ -108,9 +98,7 @@ const configApi = {
 
     getFireControlSmokeMessage: function (pageNum) {
         var urlStr = `${host}/fireDeviceMsg`
-
         var parameters
-
         parameters = {
             token: getApp().globalData.token,
             pageNum: pageNum,
@@ -122,6 +110,9 @@ const configApi = {
         var urlStr = `${host}/addFirePlace`
 
         var parameters
+        console.log(mapLat);
+        console.log(mapLnt);
+        
 
         parameters = {
             token: getApp().globalData.token,
@@ -132,7 +123,7 @@ const configApi = {
             placeType: placeType,
             areaId: areaId,
             lat: mapLat,
-            lat: mapLnt,
+            lng: mapLnt,
         }
 
         return postRequest(urlStr, parameters)
@@ -370,6 +361,7 @@ const configApi = {
             openId:openId,
             nickName:nickName,
             gender:gender,
+            type:1
         }
 
         return postRequest(urlStr, parameters)
@@ -403,7 +395,7 @@ const configApi = {
 
         return postRequest(urlStr, parameters)
     },
-    getInspectionScanDeviceList: function ( onlyUuId) {
+    getInspectionScanDeviceList: function (onlyUuId) {
         var urlStr = `${host}/queryInspectionDeviceByQr`
 
         var parameters
@@ -460,12 +452,6 @@ const configApi = {
 
         return postRequest(urlStr, parameters)
     },
-
-
-
-
-
-
 
 
 
@@ -557,6 +543,37 @@ const configApi = {
         parameters = {
             token: getApp().globalData.token,
 
+        }
+
+        return postRequest(urlStr, parameters)
+    },
+
+
+
+    getRecordBySn: function (sn) {
+        var urlStr = `${host}/getRecordBySn`
+
+        var parameters
+
+        parameters = {
+            token: getApp().globalData.token,
+            sn:sn,
+        }
+
+        return postRequest(urlStr, parameters)
+    },
+
+
+
+
+    remoteShutDown: function (sn) {
+        var urlStr = `${host}/remoteShutDown`
+
+        var parameters
+
+        parameters = {
+            token: getApp().globalData.token,
+            sn:sn,
         }
 
         return postRequest(urlStr, parameters)

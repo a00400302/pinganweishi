@@ -39,9 +39,11 @@ Page({
     })
   },
   qrCode: function () {
+    console.log(this.data.isEdit)
     this.setData({
       isEdit: true,
     })
+    console.log(this.data.isEdit)
   },
   onRightImageTap: function (e) {
     this.showDialog();

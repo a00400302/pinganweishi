@@ -43,8 +43,8 @@
   color: #6699ff;
 }
 
-
 .big_input {
+  pointer-events: none;
   text-align: center;
   width: 100%;
   margin-bottom: 3%;

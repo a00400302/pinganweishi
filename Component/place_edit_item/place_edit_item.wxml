@@ -3,7 +3,7 @@
 <wxs src="../../utils/tools.wxs" module="tools" />
 
 <view class="flex_row">
-<radio  class="radiobutton"  style="margin-top:10px;margin-left: 10px;" checked="{{isSelect == '1' ? true : false}}"    wx:if="{{isEdit == true &&  owner == 2}}"></radio>
+<radio  class="radiobutton"  style="margin-top:10px;margin-left: 10px;" checked="{{isSelect == '1' ? true : false}}"    wx:if="{{isEdit &&  owner == 2}}"></radio>
 
 <view style="width: 100%;">
 <view  class="image_layout"  wx:if="{{isEdit != true}}">

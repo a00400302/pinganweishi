@@ -22,12 +22,14 @@ Page({
             res.userInfo.gender).then(res => {
 
             console.log(res.data.data.token);
+            console.log(res.data.data.model.account);
+            console.log(res.data.data.model.name);
             console.log(res);
             getApp().globalData.token = res.data.data.token;
-                    // wx.setStorage({
-        //   key: 'user',
-        //   data: res.data['data'],
-        // })
+            wx.setStorage({
+              key: 'user',
+              data: res.data['data'],
+            })
             wx.switchTab({
               url: '/pages/fire/fire',
             })
@@ -52,7 +54,7 @@ Page({
     // })
   },
   bindGetUserInfo: function (e) {
-    var that  =this
+    var that = this
     console.log(this.data.isCheck)
     if (this.data.isCheck) {
       this.setData({
@@ -62,17 +64,17 @@ Page({
         success(res) {
           console.log(res);
           var code = res.code
-          httpNetwork.getOpenId(code).then(res =>{
-              console.log(res.data.data.openid);
-              that.setData({
-                openId:res.data.data.openid,
-                session_key:res.data.data.session_key
-              });
-              wx.showToast({
-                title: "再次点击登录"
-              })
-          }).catch(res =>{
-            
+          httpNetwork.getOpenId(code).then(res => {
+            console.log(res.data.data.openid);
+            that.setData({
+              openId: res.data.data.openid,
+              session_key: res.data.data.session_key
+            });
+            wx.showToast({
+              title: "再次点击登录"
+            })
+          }).catch(res => {
+
           })
           // wx.request({
           //   url: 'http://192.168.2.122:81/surpass/weix/getOpenId',
@@ -97,20 +99,20 @@ Page({
       })
     }
   },
-  checkboxChange : function (event) {
+  checkboxChange: function (event) {
     console.log('checkbox发生change事件，携带value值为：', event.detail.value)
-    if(event.detail.value[0] == ""){
+    if (event.detail.value[0] == "") {
       console.log('选中')
       this.setData({
         isCheck: true
       })
-    }else{
+    } else {
       console.log('未选中')
       this.setData({
         isCheck: false
       })
     }
-    
+
   },
   agreeUser: function (e) {
     wx.redirectTo({
@@ -131,9 +133,11 @@ Page({
     session_key: "",
     phone: "",
     password: "",
-    items: [
-      { name: 'USA', value: '美国', color: '#6699ff',},
-    ],
+    items: [{
+      name: 'USA',
+      value: '美国',
+      color: '#6699ff',
+    }, ],
   },
   phone: function (e) {
     this.setData({

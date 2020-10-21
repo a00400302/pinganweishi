@@ -57,20 +57,25 @@
 }
 
 
+.right_text_double {
+  text-align: right;
+  width: 30%;
+}
+
 .right_text_red {
   color: #FF5555;
   text-align: right;
-  width: 80%;
+  width: 30%;
 }
 
 .right_text_gr {
   color: #04cbb2;
   text-align: right;
-  width: 80%;
+  width: 30%;
 }
 
 .right_text_yellow {
   color: #FFB41F;
   text-align: right;
-  width: 80%;
+  width: 30%;
 }

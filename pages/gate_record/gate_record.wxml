@@ -1,0 +1,38 @@
+<!--pages/gate_record/gate_record.wxml-->
+
+<button class="button_blue flex_column" style="width: 75%; margin-top:5vh;" id="flash_button" bindtap="flash">远程阀关闭</button>
+
+
+<view class="flex_column_self" style="margin-left:8.6vh;margin-top:20px;">
+  <view class="flex_row_self" style="margin-top:20px" wx:for="{{record_data}}">
+    <image class="img" style="margin-top:3px" src="/images/radio_choseed.png"></image>
+    <view class="flex_column_self" style="margin-left: 5vh;">
+      <view class="text_align">
+        <view wx:if="{{item.type == 17}}" class="big_text">阀关闭事件</view>
+      </view>
+      <view class="text_align">
+        <view wx:if="{{item.type == 18}}" class="big_text">阀电量更新事件</view>
+      </view>
+      <view class="text_align">
+        <view class="small_text">{{item.createTime}}</view>
+      </view>
+
+      <view class="text_align">
+        <view class="context">阀序号:{{item.num}}</view>
+      </view>
+      <view class="text_align" wx:if="{{item.type == 18}}">
+        <view class="context">阀电量:{{item.power}}</view>
+      </view>
+      <view class="text_align" wx:if="{{item.type == 18}}">
+        <view class="context">阀电压:{{item.voltage}}</view>
+      </view>
+      <view class="text_align" wx:if="{{item.type == 17}}">
+        <view class="context">绑定燃气切断阀:{{item.band}}</view>
+      </view>
+      <view class="text_align" wx:if="{{item.type == 17}}">
+        <view class="context">燃气报警:{{item.warning}}</view>
+      </view>
+
+    </view>
+  </view>
+</view>

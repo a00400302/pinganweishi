@@ -21,8 +21,8 @@ Component({
       "value":"none"
     },
     isEdit:{
-      "type":String,
-      "value":"none"
+      "type":Boolean,
+      "value":false
     },
     isSelect:{
       "type":Number,

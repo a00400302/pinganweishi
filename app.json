@@ -28,6 +28,7 @@
     "pages/place_share/place_share",
     "pages/lock_list/lock_list",
     "pages/about/about",
+    "pages/gate_record/gate_record",
     "pages/login/login"
   ],
   "permission": {
@@ -39,7 +40,7 @@
     "enablePullDownRefresh": true,
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#6699ff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "瓶安卫士",
     "navigationBarTextStyle": "black"
   },
   "style": "v2",
@@ -54,7 +55,7 @@
         "pagePath": "pages/fire/fire",
         "iconPath": "images/main_firecontrol.png",
         "selectedIconPath": "images/main_firecontrol_blue.png",
-        "text": "消防"
+        "text": "场所"
       },
       {
         "pagePath": "pages/inspection/inspection",

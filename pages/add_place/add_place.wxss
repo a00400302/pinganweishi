@@ -37,15 +37,17 @@
 }
 
 .input {
-  text-align: center;
-  margin-bottom: 10%;
+  text-align:center;
+  width: 100%;
+  margin-bottom: 3%;
   border-bottom: 0.1px solid  #6699ff;
   color: #6699ff;
 }
 
 
 .big_input {
-  text-align: center;
+  pointer-events: none;
+  text-align:center;
   width: 100%;
   margin-bottom: 3%;
   border-bottom: 0.1px solid  #6699ff;
