@@ -30,7 +30,7 @@
 	<view class="flex_column">
 		<view class="flex_row">
 			<view class="text">
-          场所地址:
+          客户地址:
       </view>
 			<view wx:if="{{place_location.length > 14}}" class="text_about">
 			{{tools.sub(place_location)}}
@@ -41,7 +41,7 @@
 
 		<view class="flex_row">
 			<view  class="text">
-      	场所类别:
+      	客户类别:
       </view>
 			<view>
 				<view wx:if="{{place_type == 1}}"  class="text">

@@ -1,4 +1,4 @@
-// pages/place_share/place_share.js\
+// pages/setting/setting.js
 var httpNetwork = require("../ApiHepler.js")
 Page({
 
@@ -6,16 +6,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-    image_src:null,
-    placeId:null
+    list: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      placeId:options.placeId
+    wx.showToast({
+      title: '请选择服务器',
+      icon:"none"
+    })
+    httpNetwork.server().then(res => {
+      this.setData({
+        list: res.data.data
+      })
+      console.log(res.data.data);
     })
   },
 
@@ -30,14 +36,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    httpNetwork.getQrCode(this.data.placeId).then(res => {
-        this.setData({
-          image_src:"https://www.zsyuxinkeji.com"+res.data.data
-        })
-    }).catch(res =>{
 
-    })
-    },
+  },
 
   /**
    * 生命周期函数--监听页面隐藏
@@ -72,7 +72,27 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },flash:function(e){
-    this.onShow()
+  },
+  changeServer: function (e) {
+    var index = e.currentTarget.dataset.index
+    var that = this
+    wx.showModal({
+      content: '确定切换服务器吗',
+      showCancel: true,
+      title: '选择服务器',
+      success: (result) => {
+        if (result.confirm) {
+          wx.setStorage({
+            data: that.data.list[index].serverUrl,
+            key: 'host',
+          })
+          wx.navigateBack({
+            delta: 1,
+          })
+        }
+      },
+      fail: (res) => {},
+      complete: (res) => {},
+    })
   }
 })

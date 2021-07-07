@@ -21,35 +21,35 @@
 		
 			<view class="flex_column">
 				<text wx:if="{{place_type == 1}}"  class="text">
-				场所类型:公司企业
+				场所类型:家庭用户
 				</text>
 				<text wx:elif="{{place_type == 2}}"  class="text">
-					场所类型:工厂企业
+					场所类型:出租房
 				</text>
 				<text wx:elif="{{place_type == 3}}"  class="text">
-					场所类型:小作坊
+					场所类型:宿舍
 				</text>
 				<text wx:elif="{{place_type == 4}}"  class="text">
-					场所类型:小商铺
+					场所类型:餐饮用户
 				</text>
 				<text wx:elif="{{place_type == 5}}"  class="text">
-					场所类型:小娱乐场所
-				</text>
-				<text wx:elif="{{place_type == 6}}"  class="text">
-					场所类型:娱乐场所
-				</text>
-				<text wx:elif="{{place_type  == 7}}"  class="text">
-					场所类型:出租屋
-				</text>
-				<text wx:elif="{{place_type == 8}}"  class="text">
-					场所类型:宾饭馆
-				</text>
-				<text wx:elif="{{place_type == 9}}"  class="text">
 					场所类型:学校
 				</text>
-				<text wx:elif="{{place_type == 10}}"  class="text">
+				<text wx:elif="{{place_type == 6}}"  class="text">
+					场所类型:幼儿园
+				</text>
+				<text wx:elif="{{place_type  == 7}}"  class="text">
+					场所类型:车间
+				</text>
+				<text wx:elif="{{place_type == 8}}"  class="text">
+					场所类型:车间厨房
+				</text>
+				<text wx:elif="{{place_type == 9}}"  class="text">
 					场所类型:其他
 				</text>
+				<!-- <text wx:elif="{{place_type == 10}}"  class="text">
+					场所类型:其他
+				</text> -->
 				
 			</view>
 			<view class="flex_column"  >

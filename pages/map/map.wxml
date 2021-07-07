@@ -1,0 +1,15 @@
+<view class="flex_column">
+	<map id="map" latitude="{{latitude}}" longitude="{{longitude}}" bindregionchange="mapchangeTap"  scale="20"
+	latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" show-location bindmarkertap="selectMarket" include-points="{{markers}}" bindmarkertap="toaddress">
+		
+	</map>
+	
+
+
+
+
+</view>
+
+
+
+

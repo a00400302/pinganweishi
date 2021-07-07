@@ -185,6 +185,20 @@ Page({
       backgroundColor: '#fff',
       frontColor: '#000000',
     })
+
+    wx.getStorage({
+      key: 'host',
+      success: function (res) {
+        console.log("testurl" + res.data)
+        httpNetwork.setHost(res.data)
+      },
+      fail: function () {
+        wx.navigateTo({
+          url: '../setting/setting',
+        })
+      }
+    })
+
   },
 
   /**
@@ -220,5 +234,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  setting: function (e) {
+    wx.navigateTo({
+      url: '../setting/setting',
+    })
   }
 })

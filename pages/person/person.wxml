@@ -4,7 +4,7 @@
 
 
     <view wx:if="{{isLogin}}" class="flex_column_self">
-        <view class="text">{{username}}</view>
+        <view class="text username">{{username}}</view>
         <view class="phone_text">{{phone}}</view>
     </view>
 
@@ -22,7 +22,7 @@
         <image class="img" src="/images/icon_mine_list01.png"></image>
     </view>
     <view style="margin-top:4%;">
-        场所管理
+        客户管理
     </view>
 
     <view style="width:45%">
@@ -81,7 +81,6 @@
     <view style="width:35%">
     </view>
     <view>
-
         <image class="img" src="/images/icons_forward.png"></image>
     </view>
 

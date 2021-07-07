@@ -13,7 +13,9 @@ Page({
     owner: null,
     options: null,
     lat: null,
-    lng: null
+    lng: null, 
+    dlng: null,
+    dlat: null,
   },
 
 
@@ -29,6 +31,8 @@ Page({
       owner: options.owner,
       lat: options.lat,
       lng: options.lng,
+      dlng: options.dlng,
+      dlat: options.dlat,
       options: options,
     })
 
@@ -130,11 +134,15 @@ Page({
   location: function (e) {
     console.log(this.data.lat);
     console.log(this.data.lng);
-    var change = bMapToQQMap(Number(this.data.lat), Number(this.data.lng))
+    var change = bMapToQQMap(Number(this.data.lng),Number(this.data.lat))
+    console.log(change[1]);
+    console.log(change[0]);
     // 打开地图
     wx.openLocation({
       latitude: Number(change[1]),
       longitude: Number(change[0]),
+      // latitude:Number(this.data.lat),
+      // longitude:Number(this.data.lng),
       scale: 28
     })
   },
@@ -143,33 +151,26 @@ Page({
     wx.navigateTo({
       url: '../gate_record/gate_record?SN=' + this.data.devices_data.sn,
     })
+  },checkMap: function(e){
+    wx.navigateTo({
+      url: '../map/map?latitude='+this.data.dlat +'&&longitude='+this.data.dlng,
+      // url: '../map/map?latitude='+this.data.devices_data.lat +'&&longitude='+this.data.devices_data.lng,
+    })
   }
 
 })
 
 
 function bMapToQQMap(lng, lat) {
-
   if (lng == null || lng == '' || lat == null || lat == '')
-
     return [lng, lat];
-
   var x_pi = 3.14159265358979324;
-
   var x = parseFloat(lng) - 0.0065;
-
   var y = parseFloat(lat) - 0.006;
-
   var z = Math.sqrt(x * x + y * y) - 0.00002 * Math.sin(y * x_pi);
-
   var theta = Math.atan2(y, x) - 0.000003 * Math.cos(x * x_pi);
-
-
-
   var lng = (z * Math.cos(theta)).toFixed(7);
-
   var lat = (z * Math.sin(theta)).toFixed(7);
-
   return [lng, lat];
 
 }

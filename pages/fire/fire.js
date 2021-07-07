@@ -55,7 +55,7 @@ Page({
             that.onShow()
         }).catch(res => {
             wx.showToast({
-              title: '该场所已添加',
+              title: '该用户已添加',
             })
         })
         

@@ -24,7 +24,7 @@
 			
 
 			<view class="flex_row testText">
-				<text>所属场所:</text>
+				<text>所属客户:</text>
 				<view class="right_text">
 					<text>{{messsage_place}}</text>
 				</view>

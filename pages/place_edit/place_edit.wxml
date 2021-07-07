@@ -4,7 +4,7 @@
 <!--pages/fire/fire.wxml-->
 <add_dialog id='dialogConfirm' bind:cancelEvent="cancelEvent" bind:okEvent="okEvent"></add_dialog>
 <view class="flex_column">
-	<titleBar title_text="场所管理" bindmyevent="onRightImageTap" icon_src="../../images/add_wh.png" icon_display="block"></titleBar>
+	<titleBar title_text="客户管理" bindmyevent="onRightImageTap" icon_src="../../images/add_wh.png" icon_display="block"></titleBar>
 
 
 	<view style="padding-top: 100rpx;">

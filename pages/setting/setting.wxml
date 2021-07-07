@@ -1,0 +1,11 @@
+<!--pages/setting/setting.wxml-->
+<titleBar  title_text="服务器列表" bindmyevent="onRightImageTap" icon_src="../../images/record.png" icon_display="none"></titleBar>
+
+
+<view  style="margin-top:20%">
+<button class="box flex_column border" style="width: 90%;margin-top:5%" open-type="getUserInfo"  wx:for="{{list}}"
+	bindtap="changeServer"
+	data-index="{{index}}"
+	>{{item.serverName}}</button>
+
+</view>

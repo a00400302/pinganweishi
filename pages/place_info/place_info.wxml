@@ -16,7 +16,7 @@
 		</view>
 	</view>
 	<view class="boder" style="padding:10px" bindtap="deviceTap" data-index="{{index}}">
-		<view class="title_text">场所地址:</view>
+		<view class="title_text">客户地址:</view>
 		<view class="text">
 			{{location}}
 		</view>

@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/fire/fire",
+    "pages/login/login",
+    "pages/map/map",
     "pages/User/User",
     "pages/Privacy/Privacy",
     "pages/concat_edit/concat_edit",
@@ -29,7 +31,8 @@
     "pages/lock_list/lock_list",
     "pages/about/about",
     "pages/gate_record/gate_record",
-    "pages/login/login"
+    "pages/setting/setting"
+    
   ],
   "permission": {
     "scope.userLocation": {
@@ -55,7 +58,7 @@
         "pagePath": "pages/fire/fire",
         "iconPath": "images/main_firecontrol.png",
         "selectedIconPath": "images/main_firecontrol_blue.png",
-        "text": "场所"
+        "text": "客户"
       },
       {
         "pagePath": "pages/inspection/inspection",

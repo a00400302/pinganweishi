@@ -71,7 +71,7 @@
 	</view>
 
 
-
+<!-- 
 	<view class="flex_row_self">
 		<view class="flex_column_self left_margin">
 			<view class="paddingText">温度检测时间:</view>
@@ -104,7 +104,7 @@
 			<input bindinput="warn_tem" class="input"  value="{{warn_tem}}"></input>
 		</view>
 
-	</view>
+	</view> -->
 
 
 

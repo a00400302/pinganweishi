@@ -1,8 +1,5 @@
 <!--Component/place_item/place_item.wxml-->
-
 <wxs src="../../utils/tools.wxs" module="tools" />
-
-
 
 <view class='chain-dialog'>
 
@@ -12,7 +9,8 @@
 		</view>
 		<text  wx:if="{{owner == 1}}"  class="owner">系统</text>
 		<text  wx:if="{{owner == 2}}"  class="owner">自建	</text>
-		<text  wx:if="{{owner == 3}}"  class="owner">他人</text>
+		<text  wx:if="{{owner == 3}}"  class="owner">他人</text> 
+	
 	</view>
 
 	<view class="line"></view>
@@ -41,35 +39,35 @@
       		类别:
         </text>
 				<text wx:if="{{place_type == 1}}"  class="text">
-					公司企业
+					家庭用户
 				</text>
 				<text wx:elif="{{place_type == 2}}"  class="text">
-					工厂企业
-				</text>
-				<text wx:elif="{{place_type == 3}}"  class="text">
-					小作坊
-				</text>
-				<text wx:elif="{{place_type == 4}}"  class="text">
-					小商铺
-				</text>
-				<text wx:elif="{{place_type == 5}}"  class="text">
-					小娱乐场所
-				</text>
-				<text wx:elif="{{place_type == 6}}"  class="text">
-					娱乐场所
-				</text>
-				<text wx:elif="{{place_type  == 7}}"  class="text">
 					出租屋
 				</text>
-				<text wx:elif="{{place_type == 8}}"  class="text">
-					宾饭馆
+				<text wx:elif="{{place_type == 3}}"  class="text">
+					宿舍
 				</text>
-				<text wx:elif="{{place_type == 9}}"  class="text">
+				<text wx:elif="{{place_type == 4}}"  class="text">
+					餐饮用户
+				</text>
+				<text wx:elif="{{place_type == 5}}"  class="text">
 					学校
 				</text>
-				<text wx:elif="{{place_type == 10}}"  class="text">
+				<text wx:elif="{{place_type == 6}}"  class="text">
+					幼儿园
+				</text>
+				<text wx:elif="{{place_type  == 7}}"  class="text">
+					车间
+				</text>
+				<text wx:elif="{{place_type == 8}}"  class="text">
+					车间厨房
+				</text>
+				<text wx:elif="{{place_type == 9}}"  class="text">
 					其他
 				</text>
+				<!-- <text wx:elif="{{place_type == 10}}"  class="text">
+					其他
+				</text> -->
 			</view>
 		</view>
 	</view>

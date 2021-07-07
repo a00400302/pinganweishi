@@ -58,7 +58,7 @@
 					</view>
 				</view>
 				<view class="flex_row boder" style="padding:10px">
-					<view>场所名称</view>
+					<view>客户名称</view>
 					<view style="width:65%"></view>
 					<view>
 						{{place_name}}

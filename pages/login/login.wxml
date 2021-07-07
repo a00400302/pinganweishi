@@ -4,6 +4,10 @@
 <view class="section bc_white">
 
 
+<!-- <view class="setting"> -->
+	<image   class="setting" src="../../images/setting.png" bindtap="setting"></image>
+<!-- </view> -->
+
 	<view class="section flex_row">
 		<image src="../../images/logo.png" class="img" />
 	</view>

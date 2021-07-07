@@ -7,9 +7,11 @@
 <view class='chain-dialog'>
 
 	<view class='title_view flex_row'>
-    <image  wx:if="{{device_status == 2}}" src="../../images/fire_alarm_red.png"  class="image"></image>
-		<image  wx:elif="{{device_status == 0 && device_isWork == 0}}" src="../../images/abnormal_ye.png"  class="image"></image>
-		<image  wx:elif="{{device_status == 0 && device_isWork == 1}}" src="../../images/normal_gr.png"  class="image"></image>
+		<image wx:if="{{device_status == 2}}" src="../../images/fire_alarm_red.png" class="image"></image>
+		<image wx:elif="{{device_status == 0 && device_isWork == 0}}" src="../../images/abnormal_ye.png" class="image">
+		</image>
+		<image wx:elif="{{device_status == 0 && device_isWork == 1}}" src="../../images/normal_gr.png" class="image">
+		</image>
 		<text class="title_text">{{device_title}}[{{device_sn}}]</text>
 	</view>
 
@@ -17,69 +19,69 @@
 
 
 	<view class='chain-dialog-btn-view flex_row'>
-<view class="flex_column"   style="width:100%">
-<view class="flex_row testText">
-<text>设备类型:</text>
-<view  wx:if="{{device_type == 1}}" class="right_text">
-烟感
-</view>
-<view  wx:elif="{{device_type == 2}}" class="right_text">
-人体
-</view>
-<view  wx:elif="{{device_type == 3}}" class="right_text">
-人体+烟感
-</view>
-<view  wx:elif="{{device_type == 4}}" class="right_text">
-应急按钮
-</view>
-<view  wx:elif="{{device_type == 5}}" class="right_text">
-燃气
-</view>
-<view  wx:elif="{{device_type == 6}}" class="right_text">
-煤气
-</view>
-<view  wx:elif="{{device_type == 7}}" class="right_text">
-应急灯
-</view>
-<view  wx:elif="{{device_type == 8}}" class="right_text">
-门磁
-</view>
-</view>
+		<view class="flex_column" style="width:100%">
+			<view class="flex_row testText">
+				<text>设备类型:</text>
+				<view wx:if="{{device_type == 1}}" class="right_text">
+					烟感
+				</view>
+				<view wx:elif="{{device_type == 2}}" class="right_text">
+					人体
+				</view>
+				<view wx:elif="{{device_type == 3}}" class="right_text">
+					人体+烟感
+				</view>
+				<view wx:elif="{{device_type == 4}}" class="right_text">
+					应急按钮
+				</view>
+				<view wx:elif="{{device_type == 5}}" class="right_text">
+					燃气
+				</view>
+				<view wx:elif="{{device_type == 6}}" class="right_text">
+					煤气
+				</view>
+				<view wx:elif="{{device_type == 7}}" class="right_text">
+					应急灯
+				</view>
+				<view wx:elif="{{device_type == 8}}" class="right_text">
+					门磁
+				</view>
+			</view>
 
-<view class="flex_row testText">
-<text>设备状态:</text>
-<view class="right_text_red" wx:if="{{device_status == 2}}"  >
-报警
-</view>
-<view class="right_text_yellow" wx:elif="{{device_status == 0 && device_isWork == 0}}">
-离线
-</view>
-<view class="right_text_gr" wx:elif="{{device_status == 0 && device_isWork == 1}}" >
-正常
-</view>
-</view>
+			<view class="flex_row testText">
+				<text>设备状态:</text>
+				<view class="right_text_red" wx:if="{{device_status == 2}}">
+					报警
+				</view>
+				<view class="right_text_yellow" wx:elif="{{device_status == 0 && device_isWork == 0}}">
+					离线
+				</view>
+				<view class="right_text_gr" wx:elif="{{device_status == 0 && device_isWork == 1}}">
+					正常
+				</view>
+			</view>
 
-<view class="flex_row testText">
-	<text>设备电量:</text>
-	<view class="right_text">
-		<text >{{device_battery}}%</text>					
-	</view>
-</view>
-<view class="flex_row testText">
-<text>安装位置:</text>
-<view class="right_text">
-{{device_location}}
-</view>
-</view>
-<view class="flex_row testText">
-<text>通信时间:</text>
-<view class="right_text">
-{{device_connection_time}}
-</view>
-</view>
+			<view class="flex_row testText">
+				<text>设备电量:</text>
+				<view class="right_text">
+					<text>{{device_battery}}%</text>
+				</view>
+			</view>
+			<view class="flex_row testText">
+				<text>安装位置:</text>
+				<view class="right_text">
+					{{device_location}}
+				</view>
+			</view>
+			<view class="flex_row testText">
+				<text>通信时间:</text>
+				<view class="right_text">
+					{{device_connection_time}}
+				</view>
+			</view>
 
 
-</view>
+		</view>
 	</view>
 
 </view>

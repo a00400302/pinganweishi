@@ -108,7 +108,7 @@ Page({
     console.log(this.data.deviceList[index])
 
     wx.navigateTo({
-      url: '/pages/device_info/device_info?device_id=' + this.data.deviceList[index]["id"] + "&owner=" + this.data.owner + "&lat="+this.data.lat + "&lng="+ this.data.lng
+      url: '/pages/device_info/device_info?device_id=' + this.data.deviceList[index]["id"] + "&owner=" + this.data.owner + "&lat="+this.data.lat + "&lng="+ this.data.lng+"&dlat="+ this.data.deviceList[index]["lat"] +  "&dlng="+ this.data.deviceList[index]["lng"]
     })
   },
   //手指触摸动作开始 记录起点X坐标

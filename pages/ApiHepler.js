@@ -1,12 +1,26 @@
 var host = "https://www.zsyuxinkeji.com/surpass/mobile"
 var image_host = "https://www.zsyuxinkeji.com/surpass"
+var serverhost = "https://www.zsyuxinkeji.com/surpass/mobile/getServerList"
+
 
 
 const configApi = {
+    setHost:function(hosts){
+        console.log(hosts)
+        host = hosts + "/surpass/mobile"
+        image_host = hosts + "/surpass"
+    },
+
+    server:function(){
+        var paramerers
+        paramerers = {}
+        return getRequest(serverhost,paramerers)
+    },
+
     //用户登录
     mobileUserLogin: function (account, pwd) {
         var urlStr = `${host}/mobileUserLogin`
-
+        console.log("test" +urlStr)
         var parameters
 
         parameters = {
@@ -14,7 +28,6 @@ const configApi = {
             pwd: pwd,
             pushToken: ""
         }
-
         return postRequest(urlStr, parameters)
     },
 

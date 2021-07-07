@@ -13,7 +13,7 @@
 		</view>
 	</view>
 	<view class="flex_row_self">
-		<text class="testTest"  >设备类型:</text>
+		<text class="testTest">设备类型:</text>
 		<view class="right_text_double">
 			<text wx:if="{{devices_data.eqType == 1}}">烟感</text>
 			<text wx:if="{{devices_data.eqType == 2}}">人体</text>
@@ -25,7 +25,7 @@
 			<text wx:if="{{devices_data.eqType == 8}}">门磁</text>
 		</view>
 
-		<text class="testTest"  style="margin-left:15%;">设备状态:</text>
+		<text class="testTest" style="margin-left:15%;">设备状态:</text>
 		<view class="right_text_red" wx:if="{{devices_data.warning == 2}}">
 			报警
 		</view>
@@ -40,13 +40,19 @@
 
 
 	<view class="flex_row_self">
-		<text class="testTest">安装位置:</text>
+		<text class="testTest">场所地址:</text>
 		<view class="right_text">
 			<text>{{devices_data.location}}</text>
 		</view>
 	</view>
+	<view class="flex_row_self">
+		<text class="testTest">安装位置:</text>
+		<view class="right_text" bindtap="checkMap">
+			<image src="../../images/place_marker_bu.png" class="image" />
+		</view>
+	</view>
 	<view class="flex_row_self" bindtap="location">
-		<text class="testTest">所在场所:</text>
+		<text class="testTest">位置导航:</text>
 		<view class="right_text">
 			<text>{{devices_data.placeName}} </text>
 			<image src="../../images/icons_forward.png" class="image" />
@@ -57,9 +63,10 @@
 		<view class="right_text" bindtap="checkVideo">
 			<image src="../../images/play_video_bu.png" class="image" />
 		</view>
-
-
 	</view>
+
+
+
 	<view class="flex_row_self">
 		<text class="testTest">报警时段1:</text>
 		<view class="right_text">
@@ -77,7 +84,7 @@
 
 
 
-	<view class="flex_row_self">
+	<!-- <view class="flex_row_self">
 		<text class="testTest">传感器检测时间(毫秒):</text>
 		<view class="right_text">
 			<text>{{devices_data.ygSensitivity}}</text>
@@ -106,7 +113,7 @@
 		<view class="right_text">
 			<text>{{devices_data.rtSensitivity}}</text>
 		</view>
-	</view>
+	</view> -->
 
 	<view class="flex_row_self" bindtap="gate_record">
 		<text class="testTest">阀门记录:</text>
